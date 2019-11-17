@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/properPointerUsageWithMemory.cpp
+iostream
+-
+

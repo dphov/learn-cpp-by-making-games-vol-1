@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dphov/Personal/learn-cpp-by-making-games-vol-1
+CMAKE_SOURCE_DIR = /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-dynamicMemoryPitfalls.o: dynamicMemoryPitfalls.cpp.o
+section10/properPointerUsageWithMemory.o: section10/properPointerUsageWithMemory.cpp.o
 
-.PHONY : dynamicMemoryPitfalls.o
+.PHONY : section10/properPointerUsageWithMemory.o
 
 # target to build an object file
-dynamicMemoryPitfalls.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/dynamicMemoryPitfalls.cpp.o
-.PHONY : dynamicMemoryPitfalls.cpp.o
+section10/properPointerUsageWithMemory.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.o
+.PHONY : section10/properPointerUsageWithMemory.cpp.o
 
-dynamicMemoryPitfalls.i: dynamicMemoryPitfalls.cpp.i
+section10/properPointerUsageWithMemory.i: section10/properPointerUsageWithMemory.cpp.i
 
-.PHONY : dynamicMemoryPitfalls.i
+.PHONY : section10/properPointerUsageWithMemory.i
 
 # target to preprocess a source file
-dynamicMemoryPitfalls.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/dynamicMemoryPitfalls.cpp.i
-.PHONY : dynamicMemoryPitfalls.cpp.i
+section10/properPointerUsageWithMemory.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.i
+.PHONY : section10/properPointerUsageWithMemory.cpp.i
 
-dynamicMemoryPitfalls.s: dynamicMemoryPitfalls.cpp.s
+section10/properPointerUsageWithMemory.s: section10/properPointerUsageWithMemory.cpp.s
 
-.PHONY : dynamicMemoryPitfalls.s
+.PHONY : section10/properPointerUsageWithMemory.s
 
 # target to generate assembly for a file
-dynamicMemoryPitfalls.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/dynamicMemoryPitfalls.cpp.s
-.PHONY : dynamicMemoryPitfalls.cpp.s
+section10/properPointerUsageWithMemory.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.s
+.PHONY : section10/properPointerUsageWithMemory.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... dynamicMemoryPitfalls.o"
-	@echo "... dynamicMemoryPitfalls.i"
-	@echo "... dynamicMemoryPitfalls.s"
+	@echo "... section10/properPointerUsageWithMemory.o"
+	@echo "... section10/properPointerUsageWithMemory.i"
+	@echo "... section10/properPointerUsageWithMemory.s"
 .PHONY : help
 
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/dynamicMemoryPitfalls.cpp.o"
+  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.o"
   "learn-cpp-by-making-games-vol1"
   "learn-cpp-by-making-games-vol1.pdb"
 )
