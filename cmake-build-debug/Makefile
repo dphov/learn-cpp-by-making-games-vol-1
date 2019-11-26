@@ -123,32 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section10/properPointerUsageWithMemory.o: section10/properPointerUsageWithMemory.cpp.o
+section10/dynamicMemoryPitfalls.o: section10/dynamicMemoryPitfalls.cpp.o
 
-.PHONY : section10/properPointerUsageWithMemory.o
+.PHONY : section10/dynamicMemoryPitfalls.o
 
 # target to build an object file
-section10/properPointerUsageWithMemory.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.o
-.PHONY : section10/properPointerUsageWithMemory.cpp.o
+section10/dynamicMemoryPitfalls.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.o
+.PHONY : section10/dynamicMemoryPitfalls.cpp.o
 
-section10/properPointerUsageWithMemory.i: section10/properPointerUsageWithMemory.cpp.i
+section10/dynamicMemoryPitfalls.i: section10/dynamicMemoryPitfalls.cpp.i
 
-.PHONY : section10/properPointerUsageWithMemory.i
+.PHONY : section10/dynamicMemoryPitfalls.i
 
 # target to preprocess a source file
-section10/properPointerUsageWithMemory.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.i
-.PHONY : section10/properPointerUsageWithMemory.cpp.i
+section10/dynamicMemoryPitfalls.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.i
+.PHONY : section10/dynamicMemoryPitfalls.cpp.i
 
-section10/properPointerUsageWithMemory.s: section10/properPointerUsageWithMemory.cpp.s
+section10/dynamicMemoryPitfalls.s: section10/dynamicMemoryPitfalls.cpp.s
 
-.PHONY : section10/properPointerUsageWithMemory.s
+.PHONY : section10/dynamicMemoryPitfalls.s
 
 # target to generate assembly for a file
-section10/properPointerUsageWithMemory.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.s
-.PHONY : section10/properPointerUsageWithMemory.cpp.s
+section10/dynamicMemoryPitfalls.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.s
+.PHONY : section10/dynamicMemoryPitfalls.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section10/properPointerUsageWithMemory.o"
-	@echo "... section10/properPointerUsageWithMemory.i"
-	@echo "... section10/properPointerUsageWithMemory.s"
+	@echo "... section10/dynamicMemoryPitfalls.o"
+	@echo "... section10/dynamicMemoryPitfalls.i"
+	@echo "... section10/dynamicMemoryPitfalls.s"
 .PHONY : help
 
 

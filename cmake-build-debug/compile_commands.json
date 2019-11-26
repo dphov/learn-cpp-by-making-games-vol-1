@@ -1,7 +1,7 @@
 [
 {
   "directory": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/usr/local/bin/g++-9    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/properPointerUsageWithMemory.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/properPointerUsageWithMemory.cpp",
-  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/properPointerUsageWithMemory.cpp"
+  "command": "/usr/local/bin/g++-9    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/dynamicMemoryPitfalls.cpp",
+  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/dynamicMemoryPitfalls.cpp"
 }
 ]
