@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.o"
+  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o"
   "learn-cpp-by-making-games-vol1"
   "learn-cpp-by-making-games-vol1.pdb"
 )

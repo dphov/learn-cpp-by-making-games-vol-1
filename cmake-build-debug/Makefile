@@ -123,32 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section10/dynamicMemoryPitfalls.o: section10/dynamicMemoryPitfalls.cpp.o
+section10/DynamicMemoryPracticeProblems.o: section10/DynamicMemoryPracticeProblems.cpp.o
 
-.PHONY : section10/dynamicMemoryPitfalls.o
+.PHONY : section10/DynamicMemoryPracticeProblems.o
 
 # target to build an object file
-section10/dynamicMemoryPitfalls.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.o
-.PHONY : section10/dynamicMemoryPitfalls.cpp.o
+section10/DynamicMemoryPracticeProblems.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o
+.PHONY : section10/DynamicMemoryPracticeProblems.cpp.o
 
-section10/dynamicMemoryPitfalls.i: section10/dynamicMemoryPitfalls.cpp.i
+section10/DynamicMemoryPracticeProblems.i: section10/DynamicMemoryPracticeProblems.cpp.i
 
-.PHONY : section10/dynamicMemoryPitfalls.i
+.PHONY : section10/DynamicMemoryPracticeProblems.i
 
 # target to preprocess a source file
-section10/dynamicMemoryPitfalls.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.i
-.PHONY : section10/dynamicMemoryPitfalls.cpp.i
+section10/DynamicMemoryPracticeProblems.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.i
+.PHONY : section10/DynamicMemoryPracticeProblems.cpp.i
 
-section10/dynamicMemoryPitfalls.s: section10/dynamicMemoryPitfalls.cpp.s
+section10/DynamicMemoryPracticeProblems.s: section10/DynamicMemoryPracticeProblems.cpp.s
 
-.PHONY : section10/dynamicMemoryPitfalls.s
+.PHONY : section10/DynamicMemoryPracticeProblems.s
 
 # target to generate assembly for a file
-section10/dynamicMemoryPitfalls.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.s
-.PHONY : section10/dynamicMemoryPitfalls.cpp.s
+section10/DynamicMemoryPracticeProblems.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.s
+.PHONY : section10/DynamicMemoryPracticeProblems.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section10/dynamicMemoryPitfalls.o"
-	@echo "... section10/dynamicMemoryPitfalls.i"
-	@echo "... section10/dynamicMemoryPitfalls.s"
+	@echo "... section10/DynamicMemoryPracticeProblems.o"
+	@echo "... section10/DynamicMemoryPracticeProblems.i"
+	@echo "... section10/DynamicMemoryPracticeProblems.s"
 .PHONY : help
 
 

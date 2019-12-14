@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/dynamicMemoryPitfalls.cpp
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/DynamicMemoryPracticeProblems.cpp
 iostream
+-
+cstring
 -
 

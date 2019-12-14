@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/dynamicMemoryPitfalls.cpp">
+		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/DynamicMemoryPracticeProblems.cpp">
 			<Option target="learn-cpp-by-making-games-vol1"/>
 		</Unit>
 		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/CMakeLists.txt">

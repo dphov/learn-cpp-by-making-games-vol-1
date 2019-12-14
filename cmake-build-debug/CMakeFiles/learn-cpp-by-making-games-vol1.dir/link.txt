@@ -1,1 +1,1 @@
-/usr/local/bin/g++-9  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/dynamicMemoryPitfalls.cpp.o  -o learn-cpp-by-making-games-vol1 
+/usr/local/bin/g++-9  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o  -o learn-cpp-by-making-games-vol1 
