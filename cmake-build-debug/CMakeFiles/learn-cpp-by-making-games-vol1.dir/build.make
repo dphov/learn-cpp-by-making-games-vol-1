@@ -57,27 +57,27 @@ include CMakeFiles/learn-cpp-by-making-games-vol1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
 
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o: CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o: ../section10/DynamicMemoryPracticeProblems.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o"
-	/usr/local/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/DynamicMemoryPracticeProblems.cpp
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.o: CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.o: ../section11/hangmanImplementation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.o"
+	/usr/local/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/hangmanImplementation.cpp
 
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.i"
-	/usr/local/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/DynamicMemoryPracticeProblems.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.i
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.i"
+	/usr/local/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/hangmanImplementation.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.i
 
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.s"
-	/usr/local/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/DynamicMemoryPracticeProblems.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.s
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.s"
+	/usr/local/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/hangmanImplementation.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.s
 
 # Object files for target learn-cpp-by-making-games-vol1
 learn__cpp__by__making__games__vol1_OBJECTS = \
-"CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o"
+"CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.o"
 
 # External object files for target learn-cpp-by-making-games-vol1
 learn__cpp__by__making__games__vol1_EXTERNAL_OBJECTS =
 
-learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o
+learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/hangmanImplementation.cpp.o
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable learn-cpp-by-making-games-vol1"
