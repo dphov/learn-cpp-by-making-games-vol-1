@@ -139,6 +139,6 @@ char GetCharacter(const char *prompt, const char *error, const char validInput[]
             failure = true;
         }
     }
-    while(failure);
+    while(true);
     return input;
 }

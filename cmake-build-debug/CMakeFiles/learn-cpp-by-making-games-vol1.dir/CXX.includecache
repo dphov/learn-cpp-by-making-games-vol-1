@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/hangmanImplementation.cpp
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/Utils.h
+
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/main.cpp
 iostream
 -
-cstring
+tuple
 -
-cctype
--
+Utils.h
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/Utils.h
 

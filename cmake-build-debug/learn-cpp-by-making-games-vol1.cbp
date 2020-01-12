@@ -80,7 +80,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section10/DynamicMemoryPracticeProblems.cpp">
+		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/Utils.cpp">
+			<Option target="learn-cpp-by-making-games-vol1"/>
+		</Unit>
+		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/Utils.h">
+			<Option target="learn-cpp-by-making-games-vol1"/>
+		</Unit>
+		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/main.cpp">
 			<Option target="learn-cpp-by-making-games-vol1"/>
 		</Unit>
 		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/CMakeLists.txt">

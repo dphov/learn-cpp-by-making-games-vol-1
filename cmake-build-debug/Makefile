@@ -123,32 +123,59 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section10/DynamicMemoryPracticeProblems.o: section10/DynamicMemoryPracticeProblems.cpp.o
+section11/tic-tac-toe/Utils.o: section11/tic-tac-toe/Utils.cpp.o
 
-.PHONY : section10/DynamicMemoryPracticeProblems.o
+.PHONY : section11/tic-tac-toe/Utils.o
 
 # target to build an object file
-section10/DynamicMemoryPracticeProblems.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.o
-.PHONY : section10/DynamicMemoryPracticeProblems.cpp.o
+section11/tic-tac-toe/Utils.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.o
+.PHONY : section11/tic-tac-toe/Utils.cpp.o
 
-section10/DynamicMemoryPracticeProblems.i: section10/DynamicMemoryPracticeProblems.cpp.i
+section11/tic-tac-toe/Utils.i: section11/tic-tac-toe/Utils.cpp.i
 
-.PHONY : section10/DynamicMemoryPracticeProblems.i
+.PHONY : section11/tic-tac-toe/Utils.i
 
 # target to preprocess a source file
-section10/DynamicMemoryPracticeProblems.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.i
-.PHONY : section10/DynamicMemoryPracticeProblems.cpp.i
+section11/tic-tac-toe/Utils.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.i
+.PHONY : section11/tic-tac-toe/Utils.cpp.i
 
-section10/DynamicMemoryPracticeProblems.s: section10/DynamicMemoryPracticeProblems.cpp.s
+section11/tic-tac-toe/Utils.s: section11/tic-tac-toe/Utils.cpp.s
 
-.PHONY : section10/DynamicMemoryPracticeProblems.s
+.PHONY : section11/tic-tac-toe/Utils.s
 
 # target to generate assembly for a file
-section10/DynamicMemoryPracticeProblems.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section10/DynamicMemoryPracticeProblems.cpp.s
-.PHONY : section10/DynamicMemoryPracticeProblems.cpp.s
+section11/tic-tac-toe/Utils.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.s
+.PHONY : section11/tic-tac-toe/Utils.cpp.s
+
+section11/tic-tac-toe/main.o: section11/tic-tac-toe/main.cpp.o
+
+.PHONY : section11/tic-tac-toe/main.o
+
+# target to build an object file
+section11/tic-tac-toe/main.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.o
+.PHONY : section11/tic-tac-toe/main.cpp.o
+
+section11/tic-tac-toe/main.i: section11/tic-tac-toe/main.cpp.i
+
+.PHONY : section11/tic-tac-toe/main.i
+
+# target to preprocess a source file
+section11/tic-tac-toe/main.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.i
+.PHONY : section11/tic-tac-toe/main.cpp.i
+
+section11/tic-tac-toe/main.s: section11/tic-tac-toe/main.cpp.s
+
+.PHONY : section11/tic-tac-toe/main.s
+
+# target to generate assembly for a file
+section11/tic-tac-toe/main.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.s
+.PHONY : section11/tic-tac-toe/main.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section10/DynamicMemoryPracticeProblems.o"
-	@echo "... section10/DynamicMemoryPracticeProblems.i"
-	@echo "... section10/DynamicMemoryPracticeProblems.s"
+	@echo "... section11/tic-tac-toe/Utils.o"
+	@echo "... section11/tic-tac-toe/Utils.i"
+	@echo "... section11/tic-tac-toe/Utils.s"
+	@echo "... section11/tic-tac-toe/main.o"
+	@echo "... section11/tic-tac-toe/main.i"
+	@echo "... section11/tic-tac-toe/main.s"
 .PHONY : help
 
 

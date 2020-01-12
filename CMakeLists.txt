@@ -8,4 +8,7 @@ set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-9")
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(learn-cpp-by-making-games-vol1 section10/DynamicMemoryPracticeProblems.cpp)
+add_executable(learn-cpp-by-making-games-vol1
+        section11/tic-tac-toe/Utils.h
+        section11/tic-tac-toe/Utils.cpp
+        section11/tic-tac-toe/main.cpp)
