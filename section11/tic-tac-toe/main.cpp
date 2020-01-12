@@ -142,7 +142,6 @@ bool WantToPlayAgain()
 void PlayGame()
 {
     char * opBoard = new char [9];
-    fill(opBoard, opBoard + 9, ' ');
     DrawBoard(opBoard);
     char * opPosition = new char [2];
     bool isPlayerOneTurn = true;
@@ -153,12 +152,9 @@ void PlayGame()
         isPlayerOneTurn = get<0>(WriteCharToBoard(opPosition, opBoard, isPlayerOneTurn, &opMessageString));
         DrawBoard(opBoard);
         OutputCurrentPlayersMessage(isPlayerOneTurn);
-//        OutputMessage(opMessageString);
-//        opMessageString = {'\n'};
     } while (!IsGameOver(opBoard, 9));
 
     PrintGameOverResult(isPlayerOneTurn, opBoard, 9);
-//    PrintArray(opBoard, 8);
 }
 void OutputCurrentPlayersMessage(bool isPlayerOneTurn)
 {
@@ -167,6 +163,14 @@ void OutputCurrentPlayersMessage(bool isPlayerOneTurn)
     else
         cout << "X player turn\n" << endl;
 }
+
+void PrintTheWinner(bool isPlayerOneTurn)
+{
+    if (!isPlayerOneTurn)
+        cout << "O wins!\n" << endl;
+    else
+        cout << "X wins!\n" << endl;
+}
 void PrintGameOverResult(bool isPlayerOneTurn, char * board, int boardLength)
 {
     int i = 0;
@@ -174,16 +178,28 @@ void PrintGameOverResult(bool isPlayerOneTurn, char * board, int boardLength)
     {
         i++;
     }
-    if (i == boardLength)
+
+    if (board[0] && (board[0] == board[1] && board[1] == board[2])
+        || board[3] &&(board[3] == board[4] && board[4] == board[5])
+        || board[6] && (board[6] == board[7] && board[7] == board[8]))
     {
+        PrintTheWinner(isPlayerOneTurn);
+        return;
+    } else if ( board[0] &&(board[0] == board[3] && board[3] == board[6])
+              || board[1] && (board[1] == board[4] && board[4] == board[7])
+              || board[2] && (board[2] == board[5] && board[5] == board[8]))
+    {
+        PrintTheWinner(isPlayerOneTurn);
+        return;
+    } else if(board[0] && (board[0] == board[4] && board[4] == board[8])
+            || board[6] && (board[6] == board[4] && board[4] == board[2]))
+    {
+        PrintTheWinner(isPlayerOneTurn);
+        return;
+    } else {
         cout << "Cat game!\n" << endl;
         return;
     }
-    if (!isPlayerOneTurn)
-        cout << "O wins!\n" << endl;
-    else
-        cout << "X wins!\n" << endl;
-
 }
 void OutputMessage(char * message)
 {
@@ -320,17 +336,41 @@ char *GetCharPosition(char * pString)
     return GetCharacters("Enter position: ", "oops", pString);
 }
 
+char DrawSpaceOrCharacter(char character)
+{
+    if(character)
+    {
+        return character;
+    }
+    else
+    {
+        return ' ';
+    }
+}
+
+
 void DrawBoard(char * board)
 {
 
     ClearScreen();
+    int counter = 1;
+    char bar = '|';
     cout << "   A B C" << endl;
     cout << "  +-+-+-+" << endl;
-    cout << "1 |"<< board[0] << "|"<< board[1] <<"|"<< board[2] <<"|" << endl;
-    cout << "  +-+-+-+" << endl;
-    cout << "2 |"<< board[3] <<"|"<< board[4] <<"|"<< board[5] <<"|" << endl;
-    cout << "  +-+-+-+" << endl;
-    cout << "3 |"<< board[6] <<"|"<< board[7] <<"|"<< board[8] <<"|" << endl;
-    cout << "  +-+-+-+" << endl;
+    for (int i = 0; i < 9; i++)
+    {
+        if (i == 0 || i == 3 || i == 6)
+        {
+            cout << counter << ' ' << bar;
+            counter++;
+        }
+        cout << DrawSpaceOrCharacter(board[i]);
+        cout << bar;
 
+        if (i == 2 || i == 5 || i == 8)
+        {
+            cout << endl;
+            cout << "  +-+-+-+" << endl;
+        }
+    }
 }
