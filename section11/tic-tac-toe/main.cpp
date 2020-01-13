@@ -12,7 +12,6 @@
 
 using namespace std;
 
-
 void PlayGame();
 bool WantToPlayAgain();
 void DrawBoard(char *string1);
@@ -23,9 +22,9 @@ int ConvertPositionToIndex(char character, char number);
 tuple<bool, char, char> ValidatePosition(char *position);
 
 void PrintArray(char *board, int i);
-bool IsGameOver(char *board, int i);
-void OutputMessage(char * basicString);
-void PrintGameOverResult(bool turn, char *string1, int i);
+bool IsGameOver(const char *board, int i);
+void OutputMessage(char *basicString);
+void PrintGameOverResult(bool turn, const char *string1, int i);
 void OutputCurrentPlayersMessage(bool turn);
 /*
  * Write the game of Tic Tac Toe.
@@ -127,38 +126,40 @@ int main()
     do
     {
         PlayGame();
-    } while (WantToPlayAgain());
+    }
+    while(WantToPlayAgain());
     return 0;
 }
 
-
 bool WantToPlayAgain()
 {
-    const char validInputs[] = {'y','n'};
-    char response = GetCharacter("Do you want to play again? (y/n): ","Wrong input, try again", validInputs, 2);
+    const char validInputs[] = {'y', 'n'};
+    char response = GetCharacter("Do you want to play again? (y/n): ", "Wrong input, try again", validInputs, 2);
     return response == 'y';
 }
 
 void PlayGame()
 {
-    char * opBoard = new char [9];
+    char *opBoard = new char[9];
     DrawBoard(opBoard);
-    char * opPosition = new char [2];
+    char *opPosition = new char[2];
     bool isPlayerOneTurn = true;
-    char * opMessageString = new char;
+    char *opMessageString = new char;
     OutputCurrentPlayersMessage(isPlayerOneTurn);
-    do {
+    do
+    {
         GetCharPosition(opPosition);
         isPlayerOneTurn = get<0>(WriteCharToBoard(opPosition, opBoard, isPlayerOneTurn, &opMessageString));
         DrawBoard(opBoard);
         OutputCurrentPlayersMessage(isPlayerOneTurn);
-    } while (!IsGameOver(opBoard, 9));
+    }
+    while(!IsGameOver(opBoard, 9));
 
     PrintGameOverResult(isPlayerOneTurn, opBoard, 9);
 }
 void OutputCurrentPlayersMessage(bool isPlayerOneTurn)
 {
-    if (isPlayerOneTurn)
+    if(isPlayerOneTurn)
         cout << "O player turn\n" << endl;
     else
         cout << "X player turn\n" << endl;
@@ -166,80 +167,81 @@ void OutputCurrentPlayersMessage(bool isPlayerOneTurn)
 
 void PrintTheWinner(bool isPlayerOneTurn)
 {
-    if (!isPlayerOneTurn)
+    if(!isPlayerOneTurn)
         cout << "O wins!\n" << endl;
     else
         cout << "X wins!\n" << endl;
 }
-void PrintGameOverResult(bool isPlayerOneTurn, char * board, int boardLength)
+void PrintGameOverResult(bool isPlayerOneTurn, const char *board, int boardLength)
 {
     int i = 0;
-    while (board[i] && i <= boardLength)
+    while(board[i] && i <= boardLength)
     {
         i++;
     }
 
-    if (board[0] && (board[0] == board[1] && board[1] == board[2])
-        || board[3] &&(board[3] == board[4] && board[4] == board[5])
-        || board[6] && (board[6] == board[7] && board[7] == board[8]))
+    if(board[0] && (board[0] == board[1] && board[1] == board[2])
+       || board[3] && (board[3] == board[4] && board[4] == board[5])
+       || board[6] && (board[6] == board[7] && board[7] == board[8]))
     {
         PrintTheWinner(isPlayerOneTurn);
         return;
-    } else if ( board[0] &&(board[0] == board[3] && board[3] == board[6])
-              || board[1] && (board[1] == board[4] && board[4] == board[7])
-              || board[2] && (board[2] == board[5] && board[5] == board[8]))
+    }
+    else if(board[0] && (board[0] == board[3] && board[3] == board[6])
+            || board[1] && (board[1] == board[4] && board[4] == board[7])
+            || board[2] && (board[2] == board[5] && board[5] == board[8]))
     {
         PrintTheWinner(isPlayerOneTurn);
         return;
-    } else if(board[0] && (board[0] == board[4] && board[4] == board[8])
+    }
+    else if(board[0] && (board[0] == board[4] && board[4] == board[8])
             || board[6] && (board[6] == board[4] && board[4] == board[2]))
     {
         PrintTheWinner(isPlayerOneTurn);
         return;
-    } else {
+    }
+    else
+    {
         cout << "Cat game!\n" << endl;
         return;
     }
 }
-void OutputMessage(char * message)
+void OutputMessage(char *message)
 {
-    if (!message)
+    if(!message)
         return;
     cout << message << endl;
 }
-bool IsGameOver(char *board, int boardLength)
+bool IsGameOver(const char *board, int boardLength)
 {
     int i = 0;
-    while (board[i] && i <= boardLength)
+    while(board[i] && i <= boardLength)
     {
         i++;
     }
 
-    if (board[0] && (board[0] == board[1] && board[1] == board[2])
-    || board[3] &&(board[3] == board[4] && board[4] == board[5])
-    || board[6] && (board[6] == board[7] && board[7] == board[8]))
+    if(board[0] && (board[0] == board[1] && board[1] == board[2])
+       || board[3] && (board[3] == board[4] && board[4] == board[5])
+       || board[6] && (board[6] == board[7] && board[7] == board[8]))
         return true;
-    else if ( board[0] &&(board[0] == board[3] && board[3] == board[6])
-             || board[1] && (board[1] == board[4] && board[4] == board[7])
-             || board[2] && (board[2] == board[5] && board[5] == board[8]))
+    else if(board[0] && (board[0] == board[3] && board[3] == board[6])
+            || board[1] && (board[1] == board[4] && board[4] == board[7])
+            || board[2] && (board[2] == board[5] && board[5] == board[8]))
         return true;
     else if(board[0] && (board[0] == board[4] && board[4] == board[8])
-             || board[6] && (board[6] == board[4] && board[4] == board[2]))
+            || board[6] && (board[6] == board[4] && board[4] == board[2]))
         return true;
 
-    if (i == boardLength)
-        return true;
-    else
-        return false;
+    return i == boardLength;
 }
 
 void PrintArray(char *board, int length)
 {
     cout << "[ ";
-    for (int i = 0; i < length + 1; i++)
+    for(int i = 0; i < length + 1; i++)
     {
 
-        if (i+1 == length + 1)
+        if(i + 1 == length + 1)
             cout << board[i] << " ]" << endl;
         else
             cout << board[i] << ",";
@@ -253,43 +255,40 @@ tuple<bool, bool> WriteCharToBoard(char *position, char *board, bool isPlayerOne
     char character = get<1>(validationResult);
     char number = get<2>(validationResult);
     int targetIndex;
-    bool failure = false;
 
-    if (isPositionValid)
+    if(isPositionValid)
         targetIndex = ConvertPositionToIndex(character, number);
     else
         return make_tuple(isPlayerOneTurn, true);
 
-    if (board[targetIndex])
+    if(board[targetIndex])
     {
         string stringForMsg = "Computer: Please, choose other position";
         *message = &stringForMsg[0];
         cout << &message << endl;
         return make_tuple(isPlayerOneTurn, true);
     }
-    if (isPlayerOneTurn)
+    if(isPlayerOneTurn)
         board[targetIndex] = 'O';
     else
         board[targetIndex] = 'X';
 
-
-
-
-return make_tuple(!isPlayerOneTurn, false);
+    return make_tuple(!isPlayerOneTurn, false);
 }
 
-bool ValidatePositionWithCharTable(char character, char number) {
+bool ValidatePositionWithCharTable(char character, char number)
+{
     char charsTable[] = {'A', 'B', 'C'};
     char numbersTable[] = {'1', '2', '3'};
 
     bool isValidCharExist = false;
     bool isValidNumberExist = false;
 
-    for (int i = 0; i < 3; i++)
+    for(int i = 0; i < 3; i++)
     {
-        if (charsTable[i] == character)
+        if(charsTable[i] == character)
             isValidCharExist = true;
-        if (numbersTable[i] == number)
+        if(numbersTable[i] == number)
             isValidNumberExist = true;
     }
     return isValidCharExist && isValidNumberExist;
@@ -297,16 +296,16 @@ bool ValidatePositionWithCharTable(char character, char number) {
 
 std::tuple<bool, char, char> ValidatePosition(char *position)
 {
-    bool isPositionValid = false;
+    bool isPositionValid;
 
-    if (isdigit(position[0]) && isalpha(position[1]))
+    if(isdigit(position[0]) && isalpha(position[1]))
     {
-        isPositionValid = ValidatePositionWithCharTable(toupper(position[1]), position[0]);
+        isPositionValid = ValidatePositionWithCharTable(static_cast<char>(toupper(position[1])), position[0]);
         return make_tuple(isPositionValid, toupper(position[1]), position[0]);
     }
-    else if (isalpha(position[0]) && isdigit(position[1]))
+    else if(isalpha(position[0]) && isdigit(position[1]))
     {
-        isPositionValid = ValidatePositionWithCharTable(toupper(position[0]), position[1]);
+        isPositionValid = ValidatePositionWithCharTable(static_cast<char>(toupper(position[0])), position[1]);
         return make_tuple(isPositionValid, toupper(position[0]), position[1]);
     }
     return make_tuple(false, '0', '0');
@@ -319,9 +318,9 @@ int ConvertPositionToIndex(char columnName, char rowName)
     char columnsNamesTable[] = {'A', 'B', 'C'};
     int columnsValues[] = {-2, -1, 0};
 
-    int rowValue;
-    int columnValue;
-    for (int i = 0; i < 3; i++)
+    int rowValue = 0;
+    int columnValue = 0;
+    for(int i = 0; i < 3; i++)
     {
         if(rowsNamesTable[i] == rowName)
             rowValue = rowsValues[i];
@@ -331,7 +330,7 @@ int ConvertPositionToIndex(char columnName, char rowName)
     return rowValue + columnValue;
 }
 
-char *GetCharPosition(char * pString)
+char *GetCharPosition(char *pString)
 {
     return GetCharacters("Enter position: ", "oops", pString);
 }
@@ -348,8 +347,7 @@ char DrawSpaceOrCharacter(char character)
     }
 }
 
-
-void DrawBoard(char * board)
+void DrawBoard(char *board)
 {
 
     ClearScreen();
@@ -357,9 +355,9 @@ void DrawBoard(char * board)
     char bar = '|';
     cout << "   A B C" << endl;
     cout << "  +-+-+-+" << endl;
-    for (int i = 0; i < 9; i++)
+    for(int i = 0; i < 9; i++)
     {
-        if (i == 0 || i == 3 || i == 6)
+        if(i == 0 || i == 3 || i == 6)
         {
             cout << counter << ' ' << bar;
             counter++;
@@ -367,7 +365,7 @@ void DrawBoard(char * board)
         cout << DrawSpaceOrCharacter(board[i]);
         cout << bar;
 
-        if (i == 2 || i == 5 || i == 8)
+        if(i == 2 || i == 5 || i == 8)
         {
             cout << endl;
             cout << "  +-+-+-+" << endl;
