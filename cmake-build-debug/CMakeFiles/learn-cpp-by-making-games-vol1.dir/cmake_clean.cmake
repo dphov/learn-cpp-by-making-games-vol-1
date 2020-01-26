@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.o"
-  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.o"
+  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o"
   "learn-cpp-by-making-games-vol1"
   "learn-cpp-by-making-games-vol1.pdb"
 )

@@ -1,3 +1,11 @@
+/*
+ * Utils.h
+ *
+ * tic-tac-toe
+ *
+ * Created by Dmitry Petukhov on 04/01/2020.
+ * Copyright Dmitry Petukhov, 2020.
+*/
 
 #ifndef __UTILS_H__
 #define __UTILS_H__

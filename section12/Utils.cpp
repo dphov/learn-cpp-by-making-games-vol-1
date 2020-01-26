@@ -1,11 +1,6 @@
-/*
- * Utils.cpp
- *
- * tic-tac-toe
- *
- * Created by Dmitry Petukhov on 24/12/2019.
- * Copyright Dmitry Petukhov, 2020.
-*/
+//
+// Created by Dmitry Petukhov on 24/12/2019.
+//
 
 #include "Utils.h"
 #include <iostream>
@@ -55,23 +50,8 @@ char GetCharacter(const char *prompt, const char *error)
     while(failure);
     return input;
 }
-void WaitForKeyPress()
-{
-#ifdef OS_WIN
-    system("pause");
-#else
-    system("read -n 1 -s -p \"Press any key to continue...\";echo");
-#endif
-}
-void ClearScreen()
-{
-#ifdef OS_WIN
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-char GetCharacter(const char *prompt, const char *error, const char *validInput, int validInputLength)
+
+char GetCharacter(const char *prompt, const char *error, const char validInput[], int validInputLength, CharacterCaseType charCase)
 {
     const int IGNORE_CHARS = 256;
 
@@ -97,7 +77,15 @@ char GetCharacter(const char *prompt, const char *error, const char *validInput,
 
             if(isalpha(input))
             {
-                input = tolower(input);
+                if(charCase == CC_UPPER_CASE)
+                {
+                    input = toupper(input);
+                }
+                else if (charCase == CC_LOWER_CASE)
+                {
+                    input = tolower(input);
+                }
+
 
                 for(int i = 0; i < validInputLength; i++)
                 {
@@ -116,12 +104,20 @@ char GetCharacter(const char *prompt, const char *error, const char *validInput,
     return input;
 }
 
-char *GetCharacters(const char *prompt, const char *error, char * string)
+void ClearScreen()
 {
-    const int IGNORE_CHARS = 256;
-    cout << prompt;
-    cin >> string;
-    cin.ignore(IGNORE_CHARS, '\n');
+#ifdef OS_WIN
+    system("cls");
+#else
+    system("clear");
+#endif
+}
 
-    return string;
+void WaitForKeyPress()
+{
+#ifdef OS_WIN
+    system("pause");
+#else
+    system("read -n 1 -s -p \"Press any key to continue...\";echo");
+#endif
 }

@@ -123,59 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section11/tic-tac-toe/Utils.o: section11/tic-tac-toe/Utils.cpp.o
+section14/105UnderstandingBattleship.o: section14/105UnderstandingBattleship.cpp.o
 
-.PHONY : section11/tic-tac-toe/Utils.o
-
-# target to build an object file
-section11/tic-tac-toe/Utils.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.o
-.PHONY : section11/tic-tac-toe/Utils.cpp.o
-
-section11/tic-tac-toe/Utils.i: section11/tic-tac-toe/Utils.cpp.i
-
-.PHONY : section11/tic-tac-toe/Utils.i
-
-# target to preprocess a source file
-section11/tic-tac-toe/Utils.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.i
-.PHONY : section11/tic-tac-toe/Utils.cpp.i
-
-section11/tic-tac-toe/Utils.s: section11/tic-tac-toe/Utils.cpp.s
-
-.PHONY : section11/tic-tac-toe/Utils.s
-
-# target to generate assembly for a file
-section11/tic-tac-toe/Utils.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/Utils.cpp.s
-.PHONY : section11/tic-tac-toe/Utils.cpp.s
-
-section11/tic-tac-toe/main.o: section11/tic-tac-toe/main.cpp.o
-
-.PHONY : section11/tic-tac-toe/main.o
+.PHONY : section14/105UnderstandingBattleship.o
 
 # target to build an object file
-section11/tic-tac-toe/main.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.o
-.PHONY : section11/tic-tac-toe/main.cpp.o
+section14/105UnderstandingBattleship.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o
+.PHONY : section14/105UnderstandingBattleship.cpp.o
 
-section11/tic-tac-toe/main.i: section11/tic-tac-toe/main.cpp.i
+section14/105UnderstandingBattleship.i: section14/105UnderstandingBattleship.cpp.i
 
-.PHONY : section11/tic-tac-toe/main.i
+.PHONY : section14/105UnderstandingBattleship.i
 
 # target to preprocess a source file
-section11/tic-tac-toe/main.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.i
-.PHONY : section11/tic-tac-toe/main.cpp.i
+section14/105UnderstandingBattleship.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.i
+.PHONY : section14/105UnderstandingBattleship.cpp.i
 
-section11/tic-tac-toe/main.s: section11/tic-tac-toe/main.cpp.s
+section14/105UnderstandingBattleship.s: section14/105UnderstandingBattleship.cpp.s
 
-.PHONY : section11/tic-tac-toe/main.s
+.PHONY : section14/105UnderstandingBattleship.s
 
 # target to generate assembly for a file
-section11/tic-tac-toe/main.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section11/tic-tac-toe/main.cpp.s
-.PHONY : section11/tic-tac-toe/main.cpp.s
+section14/105UnderstandingBattleship.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.s
+.PHONY : section14/105UnderstandingBattleship.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section11/tic-tac-toe/Utils.o"
-	@echo "... section11/tic-tac-toe/Utils.i"
-	@echo "... section11/tic-tac-toe/Utils.s"
-	@echo "... section11/tic-tac-toe/main.o"
-	@echo "... section11/tic-tac-toe/main.i"
-	@echo "... section11/tic-tac-toe/main.s"
+	@echo "... section14/105UnderstandingBattleship.o"
+	@echo "... section14/105UnderstandingBattleship.i"
+	@echo "... section14/105UnderstandingBattleship.s"
 .PHONY : help
 
 

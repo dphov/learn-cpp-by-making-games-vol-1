@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/Utils.h
-
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/main.cpp
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section13/PracticeProblems.cpp
 iostream
 -
-tuple
+complex
 -
-Utils.h
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section11/tic-tac-toe/Utils.h
 

@@ -74,12 +74,12 @@ preinstall:
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/all:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/depend
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target learn-cpp-by-making-games-vol1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target learn-cpp-by-making-games-vol1"
 .PHONY : CMakeFiles/learn-cpp-by-making-games-vol1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/learn-cpp-by-making-games-vol1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/learn-cpp-by-making-games-vol1.dir/rule
