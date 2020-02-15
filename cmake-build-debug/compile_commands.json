@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/usr/local/bin/g++-9    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp",
-  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp"
+  "directory": "/home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug",
+  "command": "/usr/bin/c++    -g   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o -c /home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp",
+  "file": "/home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp"
 }
 ]

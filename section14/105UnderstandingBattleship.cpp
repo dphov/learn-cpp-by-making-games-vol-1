@@ -48,8 +48,90 @@
  *
  * Boards
  * ------
- * -2 different boards - Ship boards (where you place all your ships), guess boards (your view of the opponent's board)
+ * - 2 different boards - Ship boards (where you place all your ships), guess boards (your view of the opponent's board)
+ * - Each position on the Guess board can be in 3 states - hit, miss, we haven't guessed the spot
+ * - Board for ships - contain all the players ships at certain locations, we place markers on the spots where our
+ *     ships have been hit
  *
+ * Players
+ * -------
+ * - Name
+ * - All the ships
+ * - Guess board
+ * - Ship board
  *
- *
+ * Guess
+ * -----
+ * - Position on the board
+ * - Position has a row (A - J), columns (1 - 10)
  */
+
+enum
+{
+    AIRCRAFT_CARRIER_SIZE = 5,
+    BATTLESHIP_SIZE = 4,
+    CRUISER_SIZE = 3,
+    DESTROYER_SIZE = 3,
+    SUBMARINE_SIZE = 2,
+
+    BOARD_SIZE = 10,
+    NUM_SHIPS = 5,
+    PLAYER_NAME_SIZE = 8, // Player 1, Player 2
+    MAX_SHIP_SIZE = AIRCRAFT_CARRIER_SIZE
+};
+
+enum ShipType
+{
+    ST_NONE = 0,
+    ST_AIRCRAFT_CARRIER,
+    ST_BATTLESHIP,
+    ST_CRUISER,
+    ST_DESTROYER,
+    ST_SUBMARINE
+};
+
+enum ShipOrientationType
+{
+    SO_HORIZONTAL = 0,
+    SO_VERTICAL
+};
+
+struct ShipPositionType
+{
+    int row;
+    int col;
+};
+
+struct Ship
+{
+    ShipType shipType;
+    int shipSize;
+    ShipOrientationType orientation;
+    ShipPositionType position;
+};
+
+struct GuessType
+{
+    GT_NONE = 0,
+    GT_MISSED,
+    GT_HIT
+};
+
+struct ShipPartType
+{
+    ShipType shipType;
+    bool isHit;
+};
+
+struct Player
+{
+    char playerName[PLAYER_NAME_SIZE];
+    Ship ships[NUM_SHIPS];
+    GuessType guessBoard[BOARD_SIZE][BOARD_SIZE];
+    ShipPartType shipBoard[BOARD_SIZE][BOARD_SIZE];
+};
+
+int main()
+{
+    return 0;
+}
