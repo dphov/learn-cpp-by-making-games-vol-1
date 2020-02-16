@@ -131,6 +131,75 @@ struct Player
     ShipPartType shipBoard[BOARD_SIZE][BOARD_SIZE];
 };
 
+/* Top-down design
+ *
+ * Step 1
+ *
+ * InitPlayer(player1, "Player1");
+ * InitPlayer(player2, "Player2");
+ *
+ * do
+ * {
+ *      PlayGame(player1, player2);
+ * } while (WantToPlayAgain());
+ *
+ * PlayGame
+ * --------
+ *
+ * SetupBoard(player1);
+ * SetupBoard(player2);
+ *
+ * do
+ * {
+ *      DrawBoards(currentPlayer);
+ *      do
+ *      {
+ *          Prompt the current player for a guess
+ *          guess = GetGuess()
+ *
+ *      } while(!GuessIsValid(guess, currentPlayer));
+ *
+ *      UpdateBoards(guess, currentPlayer, otherPlayer);
+ *      DrawBoard(currentPlayer); // to see the result of the guess
+ *
+ *      if ( a ship was sunk on currentPlayer's turn)
+ *      {
+ *          output that the current player sunk that ship
+ *      }
+ *
+ *      WaitForKeyPress
+ *
+ *      SwitchPlayers();
+ *
+ * } while(!GameIsOver())
+ *
+ *  DisplayWinner();
+ *
+ *
+ *  SetupBoards(player)
+ *  -------------------
+ *
+ *  ClearBoards(player);
+ *
+ *  for (all the ships)
+ *  {
+ *      DrawBoards(player);
+ *
+ *      currentShip = Get the current ship
+ *
+ *      do
+ *      {
+ *          position = Get board position for the head of the ship
+ *          orientation = Get the ship orientation
+ *
+ *          if (IsValidPlacement(currentShip, position, orientation, player))
+ *      }
+ *  }
+ *
+ *
+ *
+ */
+
 int main()
 {
     return 0;
