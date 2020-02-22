@@ -157,7 +157,7 @@ struct Player
  *          Prompt the current player for a guess
  *          guess = GetGuess()
  *
- *      } while(!GuessIsValid(guess, currentPlayer));
+ *      } while(!IsGuessValid(guess, currentPlayer));
  *
  *      UpdateBoards(guess, currentPlayer, otherPlayer);
  *      DrawBoard(currentPlayer); // to see the result of the guess
@@ -192,11 +192,126 @@ struct Player
  *          position = Get board position for the head of the ship
  *          orientation = Get the ship orientation
  *
- *          if (IsValidPlacement(currentShip, position, orientation, player))
+ *          isValidPlacement = IsValidPlacement(currentShip, position, orientation, player)
+ *          if (!isValidPlacement)
+ *          {
+ *              output to the player is not a valid placement
+ *          }
+ *      } while (!isValidPlacement)
+ *
+ *      PlaceShipOnBoard(player, currentShip, position, orientation)
+ *  }
+ *
+ *  IsValidPlacement(player, currentShip, position, orientation)
+ *  --------------------------------------------------------------
+ *
+ *  if(orientation == HORIZONTAL)
+ *  {
+ *      for(all the columns the currentShip would take up)
+ *      {
+ *          if ( the ship will overlap another ship or the ship will be off board horizontally)
+ *          {
+ *              return false
+ *          }
+ *      }
+ *  }
+ *  else
+ *  {
+ *      for(all the rows the currentShip would take up)
+ *      {
+ *          if(ship will overlap another ship or the ship will be off board vertically)
+ *          {
+ *              return false
+ *          }
  *      }
  *  }
  *
+ *  return true
  *
+ *
+ *  PlaceShipOnBoard(player, ship, position, orientation)
+ *  -------------------------------------------------------
+ *
+ *  ship.position = position
+ *  ship.orientation = orientation
+ *
+ *  if( orientation == HORIZONTAL)
+ *  {
+ *      for(all the columns the ship would take up
+ *      {
+ *          set the ship part on the board at position.row and current column
+ *      }
+ *  }
+ *  else
+ *  {
+ *      for(all the rows that the ship would take up)
+ *      {
+ *          set the ship part on the board at current row and position.column
+ *      }
+ *  }
+ *
+ *  UpdateBoards(guess, currentPlayer, otherPlayer)
+ *  -----------------------------------------------------
+ *
+ *  if(otherplayer's ship board at guess is a ship)
+ *  {
+ *      // hit
+ *        set hit on the currentPlayer's guess board
+ *        apply damage to the otherPlayer's shipBoard
+ *        return shipType
+ *  }
+ *  else
+ *  {
+ *      set miss on the currentPlayer's guess board
+ *
+ *      return ST_NONE
+ *  }
+ *
+ *  IsGameOver(player1, player2)
+ *  ------------------------------------------------------
+ *
+ *  return AreAllShipsSunk(player1) || AreAllShipsSunk(player2)
+ *
+ *
+ *  AreAllShipsSunk(player)
+ *  --------------------------------------------------------
+ *
+ *  for ( all the player's ships)
+ *  {
+ *      if (!IsSunk(player, currentShip))
+ *      {
+ *          return false
+ *      }
+ *  }
+ *  return true
+ *
+ *
+ *
+ *  IsSunk(player, ship)
+ *  ----------------------------
+ *
+ *  if(ship.orientation == HORIZONTAL)
+ *  {
+ *      for(column that ship takes up)
+ *      {
+ *          if(currentPosition on the shipBoard is not hit)
+ *          {
+ *              return false
+ *          }
+ *      }
+ *  }
+ *  else
+ *  {
+ *      for(rows that the ship takes up)
+ *      {
+ *          if(currentPosition on the shipBoard is not hit)
+ *          {
+ *              return false
+ *          }
+ *      }
+ *  }
+ *
+ *  return true
  *
  */
 

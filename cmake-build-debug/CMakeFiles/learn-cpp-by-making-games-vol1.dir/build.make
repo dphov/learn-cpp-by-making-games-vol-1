@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/dphov/Downloads/clion-2019.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/dphov/Downloads/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dphov/Documents/learn-cpp-by-making-games-vol-1
+CMAKE_SOURCE_DIR = /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/learn-cpp-by-making-games-vol1.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
 
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o: CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o: ../section14/105UnderstandingBattleship.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o -c /home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp
 
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.i
 
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.s
 
 # Object files for target learn-cpp-by-making-games-vol1
 learn__cpp__by__making__games__vol1_OBJECTS = \
@@ -80,7 +80,7 @@ learn__cpp__by__making__games__vol1_EXTERNAL_OBJECTS =
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/105UnderstandingBattleship.cpp.o
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable learn-cpp-by-making-games-vol1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable learn-cpp-by-making-games-vol1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/learn-cpp-by-making-games-vol1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -93,6 +93,6 @@ CMakeFiles/learn-cpp-by-making-games-vol1.dir/clean:
 .PHONY : CMakeFiles/learn-cpp-by-making-games-vol1.dir/clean
 
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/depend:
-	cd /home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dphov/Documents/learn-cpp-by-making-games-vol-1 /home/dphov/Documents/learn-cpp-by-making-games-vol-1 /home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug /home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug /home/dphov/Documents/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/learn-cpp-by-making-games-vol1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1 /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1 /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/learn-cpp-by-making-games-vol1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/learn-cpp-by-making-games-vol1.dir/depend
 
