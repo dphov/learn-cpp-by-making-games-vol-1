@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp
+iostream
+-
+cstring
+-
+Utils.h
+/home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/Utils.h
+
+/home/dphov/Documents/learn-cpp-by-making-games-vol-1/section14/Utils.h
+

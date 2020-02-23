@@ -2,6 +2,12 @@
 // Created by Dmitry Petukhov on 26/01/2020.
 //
 
+#include <iostream>
+#include <cstring>
+#include "Utils.h"
+
+using namespace std;
+
 /*
  * Game: Battleship
  * The game is played on four 10x10 grids by 2 players, with each other player having 2 grids each.
@@ -66,6 +72,8 @@
  * - Position has a row (A - J), columns (1 - 10)
  */
 
+const char * INPUT_ERROR_STRING = "Input error! Please try again.";
+
 enum
 {
     AIRCRAFT_CARRIER_SIZE = 5,
@@ -110,7 +118,7 @@ struct Ship
     ShipPositionType position;
 };
 
-struct GuessType
+enum GuessType
 {
     GT_NONE = 0,
     GT_MISSED,
@@ -315,7 +323,230 @@ struct Player
  *
  */
 
+void InitializePlayer(Player & player, const char * playerName);
+
+void InitializeShip(Ship & ship, int shipSize, ShipType shipType);
+
+void PlayGame(Player & player1,Player & player2);
+
+bool WantToPlayAgain();
+
+void SetupBoards(Player & player);
+
+void ClearBoards(Player & player);
+
+void DrawBoards(const Player & player);
+
+void DrawSeparatorLine();
+void DrawColumnsRow();
+void DrawShipBoardRow(const Player& player, int row);
+void DrawGuessBoardRow(const Player& player, int row);
+char GetGuessRepresentationAt(const Player& player, int row, int col);
+char GetShipRepresentationAt(const Player& player, int row, int col);
 int main()
 {
+    Player player1;
+    Player player2;
+    const char * player1Name = "Player1";
+    const char * player2Name  = "Player2";
+
+    InitializePlayer(player1, player1Name);
+    InitializePlayer(player2, player2Name);
+
+    do
+    {
+        PlayGame(player1, player2);
+    } while (WantToPlayAgain());
+
     return 0;
+}
+
+void InitializePlayer(Player &player, const char * playerName)
+{
+    if(playerName != nullptr && strlen(playerName) > 0)
+    {
+        strcpy(player.playerName, playerName);
+    }
+
+    InitializeShip(player.ships[0], AIRCRAFT_CARRIER_SIZE, ST_AIRCRAFT_CARRIER);
+    InitializeShip(player.ships[1], BATTLESHIP_SIZE, ST_BATTLESHIP);
+    InitializeShip(player.ships[2], CRUISER_SIZE, ST_CRUISER);
+    InitializeShip(player.ships[3], DESTROYER_SIZE, ST_DESTROYER);
+    InitializeShip(player.ships[4], SUBMARINE_SIZE, ST_SUBMARINE);
+}
+
+void InitializeShip(Ship & ship, int shipSize, ShipType shipType)
+{
+    ship.shipType = shipType;
+    ship.shipSize = shipSize;
+    ship.position.row = 0;
+    ship.position.col = 0;
+    ship.orientation = SO_HORIZONTAL;
+}
+
+void PlayGame(Player & player1,Player & player2)
+{
+    SetupBoards(player1);
+    SetupBoards(player2);
+}
+
+bool WantToPlayAgain()
+{
+    char input;
+
+    const char validInput[2] = {'y', 'n'};
+
+    input = GetCharacter("Would you like to play again? (y/n): ",INPUT_ERROR_STRING, validInput, 2, CC_LOWER_CASE);
+
+    return input == 'y';
+}
+
+void SetupBoards(Player & player)
+{
+    ClearBoards(player);
+
+    DrawBoards(player);
+}
+
+void ClearBoards(Player & player)
+{
+    for(int r = 0; r < BOARD_SIZE; r++)
+    {
+        for(int c = 0; c < BOARD_SIZE; c++)
+        {
+            player.guessBoard[r][c] = GT_NONE;
+            player.shipBoard[r][c].shipType = ST_NONE; // no ship here
+            player.shipBoard[r][c].isHit = false;
+        }
+    }
+}
+
+void DrawSeparatorLine()
+{
+    cout << " ";
+
+    for(int c = 0; c < BOARD_SIZE; c++)
+    {
+        cout << "+---";
+    }
+    cout << "+";
+}
+
+void DrawColumnsRow()
+{
+    cout << "  ";
+    for(int c = 0; c < BOARD_SIZE; c++)
+    {
+        int columnName = c + 1;
+
+        cout << " " << columnName << "  ";
+    }
+}
+
+char GetShipRepresentationAt(const Player & player, int row, int col)
+{
+    if(player.shipBoard[row][col].isHit)
+    {
+        return '*'; // represents hit
+    }
+
+    if(player.shipBoard[row][col].shipType == ST_AIRCRAFT_CARRIER)
+    {
+        return 'A';
+    }
+    else if (player.shipBoard[row][col].shipType == ST_BATTLESHIP)
+    {
+        return 'B';
+    }
+    else if (player.shipBoard[row][col].shipType == ST_CRUISER)
+    {
+        return 'C';
+    }
+    else if (player.shipBoard[row][col].shipType == ST_DESTROYER)
+    {
+        return 'D';
+    }
+    else if (player.shipBoard[row][col].shipType == ST_SUBMARINE)
+    {
+        return 'S';
+    }
+    else
+    {
+        return ' ';
+    }
+}
+
+char GetGuessRepresentationAt(const Player & player, int row, int col)
+{
+    if(player.guessBoard[row][col] == GT_HIT)
+    {
+        return '*';
+    }
+    else if(player.guessBoard[row][col] == GT_MISSED)
+    {
+        return 'o';
+    }
+    else
+    {
+        return ' ';
+    }
+}
+
+
+void DrawShipBoardRow(const Player & player, int row)
+{
+    char rowName = row + 'A';
+    cout << rowName << "|";
+
+    for(int c = 0; c < BOARD_SIZE; c++)
+    {
+        cout << " " << GetShipRepresentationAt(player, row, c) << " |";
+    }
+}
+
+void DrawGuessBoardRow(const Player & player, int row)
+{
+    char rowName = row + 'A';
+    cout <<  rowName << "|";
+
+    for(int c = 0; c < BOARD_SIZE; c++)
+    {
+        cout << " " << GetGuessRepresentationAt(player, row, c) << " |";
+    }
+}
+
+void DrawBoards(const Player & player)
+{
+    DrawColumnsRow();
+
+    DrawColumnsRow();
+
+    cout << endl;
+
+    for(int r = 0; r < BOARD_SIZE; r++)
+    {
+        DrawSeparatorLine();
+
+        cout << " ";
+
+        DrawSeparatorLine();
+
+        cout << endl;
+
+        DrawShipBoardRow(player, r);
+
+        cout << " ";
+
+        DrawGuessBoardRow(player, r);
+
+        cout << endl;
+    }
+
+    DrawSeparatorLine();
+
+    cout << " ";
+
+    DrawSeparatorLine();
+
+    cout << endl;
 }
