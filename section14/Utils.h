@@ -10,11 +10,11 @@ enum CharacterCaseType
 };
 
 char GetCharacter(const char *prompt, const char *error);
-
 char GetCharacter(const char *prompt, const char *error, const char validInput[], int validInputLength, CharacterCaseType charCase);
 
-void ClearScreen();
+int GetInteger(const char *prompt, const char *error, const int validInput[], int validInputLength);
 
+void ClearScreen();
 void WaitForKeyPress();
 
 #endif

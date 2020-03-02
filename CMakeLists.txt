@@ -8,4 +8,4 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(learn-cpp-by-making-games-vol1 section14/105UnderstandingBattleship.cpp section14/Utils.cpp)
+add_executable(learn-cpp-by-making-games-vol1 section14/Battleship.cpp section14/Utils.cpp)

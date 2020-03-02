@@ -104,6 +104,42 @@ char GetCharacter(const char *prompt, const char *error, const char validInput[]
     return input;
 }
 
+int GetInteger(const char *prompt, const char *error, const int validInput[], int validInputLength)
+{
+    int input;
+    bool inputFailure;
+
+    const int IGNORE_CHARS = 256;
+    do
+    {
+        inputFailure = false;
+        cout << prompt;
+        cin >> input;
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(IGNORE_CHARS, '\n');
+            cout << error << endl;
+            inputFailure = true;
+        }
+        else
+        {
+            for(int i = 0; validInputLength; i++)
+            {
+                if(input == validInput[i])
+                {
+                    return input;
+                }
+            }
+
+            cout << error << endl;
+            inputFailure = true;
+        }
+    } while (inputFailure);
+}
+
+
 void ClearScreen()
 {
 #ifdef OS_WIN
