@@ -137,6 +137,7 @@ int GetInteger(const char *prompt, const char *error, const int validInput[], in
             inputFailure = true;
         }
     } while (inputFailure);
+    return -1;
 }
 
 

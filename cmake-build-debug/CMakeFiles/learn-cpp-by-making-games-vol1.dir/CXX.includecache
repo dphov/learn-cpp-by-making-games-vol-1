@@ -6,10 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/105UnderstandingBattleship.cpp
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Battleship.cpp
 iostream
 -
 cstring
+-
+cstdlib
+-
+ctime
 -
 Utils.h
 /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h
