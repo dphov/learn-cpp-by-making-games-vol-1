@@ -6,17 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Battleship.cpp
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/BinaryFiles.cpp
 iostream
 -
-cstring
+fstream
 -
 cstdlib
 -
 ctime
 -
-Utils.h
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h
-
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h
 

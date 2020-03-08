@@ -123,59 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section14/Battleship.o: section14/Battleship.cpp.o
+section15/FileIOMiniProject.o: section15/FileIOMiniProject.cpp.o
 
-.PHONY : section14/Battleship.o
-
-# target to build an object file
-section14/Battleship.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Battleship.cpp.o
-.PHONY : section14/Battleship.cpp.o
-
-section14/Battleship.i: section14/Battleship.cpp.i
-
-.PHONY : section14/Battleship.i
-
-# target to preprocess a source file
-section14/Battleship.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Battleship.cpp.i
-.PHONY : section14/Battleship.cpp.i
-
-section14/Battleship.s: section14/Battleship.cpp.s
-
-.PHONY : section14/Battleship.s
-
-# target to generate assembly for a file
-section14/Battleship.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Battleship.cpp.s
-.PHONY : section14/Battleship.cpp.s
-
-section14/Utils.o: section14/Utils.cpp.o
-
-.PHONY : section14/Utils.o
+.PHONY : section15/FileIOMiniProject.o
 
 # target to build an object file
-section14/Utils.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Utils.cpp.o
-.PHONY : section14/Utils.cpp.o
+section15/FileIOMiniProject.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.o
+.PHONY : section15/FileIOMiniProject.cpp.o
 
-section14/Utils.i: section14/Utils.cpp.i
+section15/FileIOMiniProject.i: section15/FileIOMiniProject.cpp.i
 
-.PHONY : section14/Utils.i
+.PHONY : section15/FileIOMiniProject.i
 
 # target to preprocess a source file
-section14/Utils.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Utils.cpp.i
-.PHONY : section14/Utils.cpp.i
+section15/FileIOMiniProject.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.i
+.PHONY : section15/FileIOMiniProject.cpp.i
 
-section14/Utils.s: section14/Utils.cpp.s
+section15/FileIOMiniProject.s: section15/FileIOMiniProject.cpp.s
 
-.PHONY : section14/Utils.s
+.PHONY : section15/FileIOMiniProject.s
 
 # target to generate assembly for a file
-section14/Utils.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Utils.cpp.s
-.PHONY : section14/Utils.cpp.s
+section15/FileIOMiniProject.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.s
+.PHONY : section15/FileIOMiniProject.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section14/Battleship.o"
-	@echo "... section14/Battleship.i"
-	@echo "... section14/Battleship.s"
-	@echo "... section14/Utils.o"
-	@echo "... section14/Utils.i"
-	@echo "... section14/Utils.s"
+	@echo "... section15/FileIOMiniProject.o"
+	@echo "... section15/FileIOMiniProject.i"
+	@echo "... section15/FileIOMiniProject.s"
 .PHONY : help
 
 

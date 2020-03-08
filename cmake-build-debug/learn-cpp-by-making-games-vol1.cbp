@@ -80,13 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Battleship.cpp">
-			<Option target="learn-cpp-by-making-games-vol1"/>
-		</Unit>
-		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.cpp">
-			<Option target="learn-cpp-by-making-games-vol1"/>
-		</Unit>
-		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h">
+		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/FileIOMiniProject.cpp">
 			<Option target="learn-cpp-by-making-games-vol1"/>
 		</Unit>
 		<Unit filename="/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/CMakeLists.txt">

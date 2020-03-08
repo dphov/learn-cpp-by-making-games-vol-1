@@ -1,12 +1,7 @@
 [
 {
   "directory": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Battleship.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Battleship.cpp",
-  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Battleship.cpp"
-},
-{
-  "directory": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section14/Utils.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.cpp",
-  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.cpp"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/FileIOMiniProject.cpp",
+  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/FileIOMiniProject.cpp"
 }
 ]
