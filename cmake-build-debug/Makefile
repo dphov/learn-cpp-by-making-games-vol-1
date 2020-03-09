@@ -150,6 +150,33 @@ section15/FileIOMiniProject.cpp.s:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.s
 .PHONY : section15/FileIOMiniProject.cpp.s
 
+section15/Utils.o: section15/Utils.cpp.o
+
+.PHONY : section15/Utils.o
+
+# target to build an object file
+section15/Utils.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.o
+.PHONY : section15/Utils.cpp.o
+
+section15/Utils.i: section15/Utils.cpp.i
+
+.PHONY : section15/Utils.i
+
+# target to preprocess a source file
+section15/Utils.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.i
+.PHONY : section15/Utils.cpp.i
+
+section15/Utils.s: section15/Utils.cpp.s
+
+.PHONY : section15/Utils.s
+
+# target to generate assembly for a file
+section15/Utils.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.s
+.PHONY : section15/Utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... section15/FileIOMiniProject.o"
 	@echo "... section15/FileIOMiniProject.i"
 	@echo "... section15/FileIOMiniProject.s"
+	@echo "... section15/Utils.o"
+	@echo "... section15/Utils.i"
+	@echo "... section15/Utils.s"
 .PHONY : help
 
 

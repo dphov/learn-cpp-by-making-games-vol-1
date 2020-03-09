@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/FileIOMiniProject.cpp" "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.o"
+  "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/Utils.cpp" "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
