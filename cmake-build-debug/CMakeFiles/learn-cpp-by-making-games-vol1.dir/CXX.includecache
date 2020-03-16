@@ -6,25 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Battleship.cpp
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/FileIOMiniProject.cpp
 iostream
 -
-cstring
--
-cstdlib
--
-ctime
+fstream
 -
 Utils.h
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/Utils.h
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.cpp
-Utils.h
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h
-iostream
--
-cctype
--
-
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section14/Utils.h
+/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/Utils.h
 

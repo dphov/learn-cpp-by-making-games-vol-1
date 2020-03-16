@@ -141,6 +141,41 @@ int GetInteger(const char *prompt, const char *error, const int validInput[], in
 }
 
 
+int GetString(const char * prompt, const char * error, char string[], int maxLength)
+{
+    bool failure;
+    int length;
+    const int IGNORE_CHARS = 256;
+
+    do
+    {
+        failure = false;
+
+        cout << prompt;
+        cin >> ws; // special - meaning clear whitespace
+        cin.get(string, maxLength, '\n');
+
+        if(cin.fail())
+        {
+            cin.clear();
+            cin.ignore(IGNORE_CHARS, '\n');
+            cout << error << endl;
+            failure = true;
+        }
+        else
+        {
+            cin.ignore(IGNORE_CHARS, '\n');
+            length = strlen(string);
+            if(length == 0)
+            {
+                cout << "You must enter a word that's longer than 0 characters! Please try again!" << endl;
+                failure = true;
+            }
+        }
+    }while(failure);
+    return length;
+}
+
 void ClearScreen()
 {
 #ifdef OS_WIN

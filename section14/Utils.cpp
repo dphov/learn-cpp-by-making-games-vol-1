@@ -140,7 +140,6 @@ int GetInteger(const char *prompt, const char *error, const int validInput[], in
     return -1;
 }
 
-
 void ClearScreen()
 {
 #ifdef OS_WIN
