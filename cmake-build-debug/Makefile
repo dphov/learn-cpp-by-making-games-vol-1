@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1
+CMAKE_SOURCE_DIR = /Users/dphov/Personal/learn-cpp-by-making-games-vol-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,59 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section15/FileIOMiniProject.o: section15/FileIOMiniProject.cpp.o
+section16/Strings.o: section16/Strings.cpp.o
 
-.PHONY : section15/FileIOMiniProject.o
-
-# target to build an object file
-section15/FileIOMiniProject.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.o
-.PHONY : section15/FileIOMiniProject.cpp.o
-
-section15/FileIOMiniProject.i: section15/FileIOMiniProject.cpp.i
-
-.PHONY : section15/FileIOMiniProject.i
-
-# target to preprocess a source file
-section15/FileIOMiniProject.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.i
-.PHONY : section15/FileIOMiniProject.cpp.i
-
-section15/FileIOMiniProject.s: section15/FileIOMiniProject.cpp.s
-
-.PHONY : section15/FileIOMiniProject.s
-
-# target to generate assembly for a file
-section15/FileIOMiniProject.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/FileIOMiniProject.cpp.s
-.PHONY : section15/FileIOMiniProject.cpp.s
-
-section15/Utils.o: section15/Utils.cpp.o
-
-.PHONY : section15/Utils.o
+.PHONY : section16/Strings.o
 
 # target to build an object file
-section15/Utils.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.o
-.PHONY : section15/Utils.cpp.o
+section16/Strings.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Strings.cpp.o
+.PHONY : section16/Strings.cpp.o
 
-section15/Utils.i: section15/Utils.cpp.i
+section16/Strings.i: section16/Strings.cpp.i
 
-.PHONY : section15/Utils.i
+.PHONY : section16/Strings.i
 
 # target to preprocess a source file
-section15/Utils.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.i
-.PHONY : section15/Utils.cpp.i
+section16/Strings.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Strings.cpp.i
+.PHONY : section16/Strings.cpp.i
 
-section15/Utils.s: section15/Utils.cpp.s
+section16/Strings.s: section16/Strings.cpp.s
 
-.PHONY : section15/Utils.s
+.PHONY : section16/Strings.s
 
 # target to generate assembly for a file
-section15/Utils.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section15/Utils.cpp.s
-.PHONY : section15/Utils.cpp.s
+section16/Strings.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Strings.cpp.s
+.PHONY : section16/Strings.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section15/FileIOMiniProject.o"
-	@echo "... section15/FileIOMiniProject.i"
-	@echo "... section15/FileIOMiniProject.s"
-	@echo "... section15/Utils.o"
-	@echo "... section15/Utils.i"
-	@echo "... section15/Utils.s"
+	@echo "... section16/Strings.o"
+	@echo "... section16/Strings.i"
+	@echo "... section16/Strings.s"
 .PHONY : help
 
 

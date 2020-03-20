@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/FileIOMiniProject.cpp
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Strings.cpp
 iostream
 -
-fstream
+string
 -
-Utils.h
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/Utils.h
-
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section15/Utils.h
 
