@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Strings.cpp">
+		<Unit filename="/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Vectors.cpp">
 			<Option target="learn-cpp-by-making-games-vol1"/>
 		</Unit>
 		<Unit filename="/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/CMakeLists.txt">

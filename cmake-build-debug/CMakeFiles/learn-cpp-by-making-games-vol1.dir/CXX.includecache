@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Strings.cpp
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Vectors.cpp
 iostream
 -
-string
+vector
 -
 

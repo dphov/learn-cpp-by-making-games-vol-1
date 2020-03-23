@@ -123,32 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section16/Strings.o: section16/Strings.cpp.o
+section16/Vectors.o: section16/Vectors.cpp.o
 
-.PHONY : section16/Strings.o
+.PHONY : section16/Vectors.o
 
 # target to build an object file
-section16/Strings.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Strings.cpp.o
-.PHONY : section16/Strings.cpp.o
+section16/Vectors.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Vectors.cpp.o
+.PHONY : section16/Vectors.cpp.o
 
-section16/Strings.i: section16/Strings.cpp.i
+section16/Vectors.i: section16/Vectors.cpp.i
 
-.PHONY : section16/Strings.i
+.PHONY : section16/Vectors.i
 
 # target to preprocess a source file
-section16/Strings.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Strings.cpp.i
-.PHONY : section16/Strings.cpp.i
+section16/Vectors.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Vectors.cpp.i
+.PHONY : section16/Vectors.cpp.i
 
-section16/Strings.s: section16/Strings.cpp.s
+section16/Vectors.s: section16/Vectors.cpp.s
 
-.PHONY : section16/Strings.s
+.PHONY : section16/Vectors.s
 
 # target to generate assembly for a file
-section16/Strings.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Strings.cpp.s
-.PHONY : section16/Strings.cpp.s
+section16/Vectors.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Vectors.cpp.s
+.PHONY : section16/Vectors.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section16/Strings.o"
-	@echo "... section16/Strings.i"
-	@echo "... section16/Strings.s"
+	@echo "... section16/Vectors.o"
+	@echo "... section16/Vectors.i"
+	@echo "... section16/Vectors.s"
 .PHONY : help
 
 
