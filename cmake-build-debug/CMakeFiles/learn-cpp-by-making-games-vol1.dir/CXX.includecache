@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Vectors.cpp
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Utils.cpp
+Utils.h
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Utils.h
 iostream
 -
-vector
+cctype
+-
+
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Utils.h
+string
 -
 
