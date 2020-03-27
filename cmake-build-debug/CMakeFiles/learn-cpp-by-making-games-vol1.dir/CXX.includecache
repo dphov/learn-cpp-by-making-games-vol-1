@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Utils.cpp
-Utils.h
-/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Utils.h
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesInput.cpp
 iostream
 -
-cctype
--
-
-/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section16/Utils.h
-string
+ncurses.h
 -
 

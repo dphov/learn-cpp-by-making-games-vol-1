@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="learn-cpp-by-making-games-vol1-terminal" type="CMakeRunConfiguration" factoryName="Application" singleton="false" PROGRAM_PARAMS="$PROJECT_DIR$/cmake-build-debug/learn-cpp-by-making-games-vol1" WORKING_DIR="file://$PROJECT_DIR$/cmake-build-debug/" PASS_PARENT_ENVS_2="true" PROJECT_NAME="learn-cpp-by-making-games-vol1" TARGET_NAME="learn-cpp-by-making-games-vol1" CONFIG_NAME="Debug" RUN_PATH="/Applications/iTerm.app/Contents/MacOS/iTerm2">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

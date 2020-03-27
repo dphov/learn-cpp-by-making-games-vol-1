@@ -123,59 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section16/PigLatin.o: section16/PigLatin.cpp.o
+section17/CursesInput.o: section17/CursesInput.cpp.o
 
-.PHONY : section16/PigLatin.o
-
-# target to build an object file
-section16/PigLatin.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/PigLatin.cpp.o
-.PHONY : section16/PigLatin.cpp.o
-
-section16/PigLatin.i: section16/PigLatin.cpp.i
-
-.PHONY : section16/PigLatin.i
-
-# target to preprocess a source file
-section16/PigLatin.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/PigLatin.cpp.i
-.PHONY : section16/PigLatin.cpp.i
-
-section16/PigLatin.s: section16/PigLatin.cpp.s
-
-.PHONY : section16/PigLatin.s
-
-# target to generate assembly for a file
-section16/PigLatin.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/PigLatin.cpp.s
-.PHONY : section16/PigLatin.cpp.s
-
-section16/Utils.o: section16/Utils.cpp.o
-
-.PHONY : section16/Utils.o
+.PHONY : section17/CursesInput.o
 
 # target to build an object file
-section16/Utils.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Utils.cpp.o
-.PHONY : section16/Utils.cpp.o
+section17/CursesInput.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesInput.cpp.o
+.PHONY : section17/CursesInput.cpp.o
 
-section16/Utils.i: section16/Utils.cpp.i
+section17/CursesInput.i: section17/CursesInput.cpp.i
 
-.PHONY : section16/Utils.i
+.PHONY : section17/CursesInput.i
 
 # target to preprocess a source file
-section16/Utils.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Utils.cpp.i
-.PHONY : section16/Utils.cpp.i
+section17/CursesInput.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesInput.cpp.i
+.PHONY : section17/CursesInput.cpp.i
 
-section16/Utils.s: section16/Utils.cpp.s
+section17/CursesInput.s: section17/CursesInput.cpp.s
 
-.PHONY : section16/Utils.s
+.PHONY : section17/CursesInput.s
 
 # target to generate assembly for a file
-section16/Utils.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Utils.cpp.s
-.PHONY : section16/Utils.cpp.s
+section17/CursesInput.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesInput.cpp.s
+.PHONY : section17/CursesInput.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section16/PigLatin.o"
-	@echo "... section16/PigLatin.i"
-	@echo "... section16/PigLatin.s"
-	@echo "... section16/Utils.o"
-	@echo "... section16/Utils.i"
-	@echo "... section16/Utils.s"
+	@echo "... section17/CursesInput.o"
+	@echo "... section17/CursesInput.i"
+	@echo "... section17/CursesInput.s"
 .PHONY : help
 
 
