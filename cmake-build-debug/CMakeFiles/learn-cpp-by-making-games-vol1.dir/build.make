@@ -57,32 +57,47 @@ include CMakeFiles/learn-cpp-by-making-games-vol1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
 
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o: CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o: ../section17/CursesAttributesAndASplashOfColor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o -c /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesAttributesAndASplashOfColor.cpp
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o: CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o: ../section17/CursesMakingOurNewUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o -c /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesMakingOurNewUtils.cpp
 
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesAttributesAndASplashOfColor.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.i
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesMakingOurNewUtils.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.i
 
-CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesAttributesAndASplashOfColor.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.s
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesMakingOurNewUtils.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.s
+
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o: CMakeFiles/learn-cpp-by-making-games-vol1.dir/flags.make
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o: ../section17/CursesUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o -c /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesUtils.cpp
+
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesUtils.cpp > CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.i
+
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesUtils.cpp -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.s
 
 # Object files for target learn-cpp-by-making-games-vol1
 learn__cpp__by__making__games__vol1_OBJECTS = \
-"CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o"
+"CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o" \
+"CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o"
 
 # External object files for target learn-cpp-by-making-games-vol1
 learn__cpp__by__making__games__vol1_EXTERNAL_OBJECTS =
 
-learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o
+learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o
+learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make
 learn-cpp-by-making-games-vol1: /usr/lib/libcurses.dylib
 learn-cpp-by-making-games-vol1: /usr/lib/libform.dylib
 learn-cpp-by-making-games-vol1: CMakeFiles/learn-cpp-by-making-games-vol1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable learn-cpp-by-making-games-vol1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable learn-cpp-by-making-games-vol1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/learn-cpp-by-making-games-vol1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

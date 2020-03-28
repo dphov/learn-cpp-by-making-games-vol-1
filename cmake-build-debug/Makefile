@@ -123,32 +123,59 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section17/CursesAttributesAndASplashOfColor.o: section17/CursesAttributesAndASplashOfColor.cpp.o
+section17/CursesMakingOurNewUtils.o: section17/CursesMakingOurNewUtils.cpp.o
 
-.PHONY : section17/CursesAttributesAndASplashOfColor.o
+.PHONY : section17/CursesMakingOurNewUtils.o
 
 # target to build an object file
-section17/CursesAttributesAndASplashOfColor.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o
-.PHONY : section17/CursesAttributesAndASplashOfColor.cpp.o
+section17/CursesMakingOurNewUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o
+.PHONY : section17/CursesMakingOurNewUtils.cpp.o
 
-section17/CursesAttributesAndASplashOfColor.i: section17/CursesAttributesAndASplashOfColor.cpp.i
+section17/CursesMakingOurNewUtils.i: section17/CursesMakingOurNewUtils.cpp.i
 
-.PHONY : section17/CursesAttributesAndASplashOfColor.i
+.PHONY : section17/CursesMakingOurNewUtils.i
 
 # target to preprocess a source file
-section17/CursesAttributesAndASplashOfColor.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.i
-.PHONY : section17/CursesAttributesAndASplashOfColor.cpp.i
+section17/CursesMakingOurNewUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.i
+.PHONY : section17/CursesMakingOurNewUtils.cpp.i
 
-section17/CursesAttributesAndASplashOfColor.s: section17/CursesAttributesAndASplashOfColor.cpp.s
+section17/CursesMakingOurNewUtils.s: section17/CursesMakingOurNewUtils.cpp.s
 
-.PHONY : section17/CursesAttributesAndASplashOfColor.s
+.PHONY : section17/CursesMakingOurNewUtils.s
 
 # target to generate assembly for a file
-section17/CursesAttributesAndASplashOfColor.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.s
-.PHONY : section17/CursesAttributesAndASplashOfColor.cpp.s
+section17/CursesMakingOurNewUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.s
+.PHONY : section17/CursesMakingOurNewUtils.cpp.s
+
+section17/CursesUtils.o: section17/CursesUtils.cpp.o
+
+.PHONY : section17/CursesUtils.o
+
+# target to build an object file
+section17/CursesUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o
+.PHONY : section17/CursesUtils.cpp.o
+
+section17/CursesUtils.i: section17/CursesUtils.cpp.i
+
+.PHONY : section17/CursesUtils.i
+
+# target to preprocess a source file
+section17/CursesUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.i
+.PHONY : section17/CursesUtils.cpp.i
+
+section17/CursesUtils.s: section17/CursesUtils.cpp.s
+
+.PHONY : section17/CursesUtils.s
+
+# target to generate assembly for a file
+section17/CursesUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.s
+.PHONY : section17/CursesUtils.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section17/CursesAttributesAndASplashOfColor.o"
-	@echo "... section17/CursesAttributesAndASplashOfColor.i"
-	@echo "... section17/CursesAttributesAndASplashOfColor.s"
+	@echo "... section17/CursesMakingOurNewUtils.o"
+	@echo "... section17/CursesMakingOurNewUtils.i"
+	@echo "... section17/CursesMakingOurNewUtils.s"
+	@echo "... section17/CursesUtils.o"
+	@echo "... section17/CursesUtils.i"
+	@echo "... section17/CursesUtils.s"
 .PHONY : help
 
 

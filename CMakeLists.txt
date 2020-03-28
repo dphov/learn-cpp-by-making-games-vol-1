@@ -7,5 +7,5 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 
-add_executable(learn-cpp-by-making-games-vol1 section17/CursesAttributesAndASplashOfColor.cpp)
+add_executable(learn-cpp-by-making-games-vol1 section17/CursesMakingOurNewUtils.cpp section17/CursesUtils.h section17/CursesUtils.cpp)
 target_link_libraries(learn-cpp-by-making-games-vol1 ${CURSES_LIBRARIES})
