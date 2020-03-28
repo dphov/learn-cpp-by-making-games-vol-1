@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesACompleteExample.cpp.o"
+  "CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o"
   "learn-cpp-by-making-games-vol1"
   "learn-cpp-by-making-games-vol1.pdb"
 )

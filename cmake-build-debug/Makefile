@@ -123,32 +123,32 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section17/CursesACompleteExample.o: section17/CursesACompleteExample.cpp.o
+section17/CursesAttributesAndASplashOfColor.o: section17/CursesAttributesAndASplashOfColor.cpp.o
 
-.PHONY : section17/CursesACompleteExample.o
+.PHONY : section17/CursesAttributesAndASplashOfColor.o
 
 # target to build an object file
-section17/CursesACompleteExample.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesACompleteExample.cpp.o
-.PHONY : section17/CursesACompleteExample.cpp.o
+section17/CursesAttributesAndASplashOfColor.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o
+.PHONY : section17/CursesAttributesAndASplashOfColor.cpp.o
 
-section17/CursesACompleteExample.i: section17/CursesACompleteExample.cpp.i
+section17/CursesAttributesAndASplashOfColor.i: section17/CursesAttributesAndASplashOfColor.cpp.i
 
-.PHONY : section17/CursesACompleteExample.i
+.PHONY : section17/CursesAttributesAndASplashOfColor.i
 
 # target to preprocess a source file
-section17/CursesACompleteExample.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesACompleteExample.cpp.i
-.PHONY : section17/CursesACompleteExample.cpp.i
+section17/CursesAttributesAndASplashOfColor.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.i
+.PHONY : section17/CursesAttributesAndASplashOfColor.cpp.i
 
-section17/CursesACompleteExample.s: section17/CursesACompleteExample.cpp.s
+section17/CursesAttributesAndASplashOfColor.s: section17/CursesAttributesAndASplashOfColor.cpp.s
 
-.PHONY : section17/CursesACompleteExample.s
+.PHONY : section17/CursesAttributesAndASplashOfColor.s
 
 # target to generate assembly for a file
-section17/CursesACompleteExample.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesACompleteExample.cpp.s
-.PHONY : section17/CursesACompleteExample.cpp.s
+section17/CursesAttributesAndASplashOfColor.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.s
+.PHONY : section17/CursesAttributesAndASplashOfColor.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section17/CursesACompleteExample.o"
-	@echo "... section17/CursesACompleteExample.i"
-	@echo "... section17/CursesACompleteExample.s"
+	@echo "... section17/CursesAttributesAndASplashOfColor.o"
+	@echo "... section17/CursesAttributesAndASplashOfColor.i"
+	@echo "... section17/CursesAttributesAndASplashOfColor.s"
 .PHONY : help
 
 

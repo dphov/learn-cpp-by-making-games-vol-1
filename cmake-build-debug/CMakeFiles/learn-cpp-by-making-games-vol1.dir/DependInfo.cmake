@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesACompleteExample.cpp" "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesACompleteExample.cpp.o"
+  "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesAttributesAndASplashOfColor.cpp" "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug/CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesAttributesAndASplashOfColor.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
