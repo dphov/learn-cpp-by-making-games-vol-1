@@ -83,10 +83,47 @@ int main()
 string PigLatinify(string & nonPigLatinString)
 {
     char vowels[] = { 'a', 'e', 'i', 'o', 'u', 'y' };
+    int vowelIndex = -1;
 
-    for( int i = 0; i < nonPigLatinString.size(); i++)
+    int i = 0;
+
+    while (i < nonPigLatinString.size())
     {
+        if (vowelIndex != -1)
+        {
+            break;
+        }
+        switch (nonPigLatinString[i])
+        {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'y':
+                vowelIndex = i;
+                break;
+            default:
+                i++;
+                continue;
+        }
+    }
 
+    if (vowelIndex == 0)
+    {
+        nonPigLatinString.push_back('w');
+        nonPigLatinString.push_back('a');
+        nonPigLatinString.push_back('y');
+    }
+    else if (vowelIndex != -1)
+    {
+        for(int i = 0; i < vowelIndex; i++)
+        {
+            nonPigLatinString.push_back(nonPigLatinString[i]);
+        }
+        nonPigLatinString.erase(0, vowelIndex);
+        nonPigLatinString.push_back('a');
+        nonPigLatinString.push_back('y');
     }
 
     return nonPigLatinString;
