@@ -1,18 +1,7 @@
 [
 {
-<<<<<<< HEAD
   "directory": "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesInput.cpp.o -c /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesInput.cpp",
-  "file": "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesInput.cpp"
-=======
-  "directory": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/PigLatin.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/PigLatin.cpp",
-  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/PigLatin.cpp"
-},
-{
-  "directory": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section16/Utils.cpp.o -c /Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/Utils.cpp",
-  "file": "/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/Utils.cpp"
->>>>>>> 33591fbc9b1b4ee97f8af02a5d9f09fb20339d8c
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -std=gnu++1z -o CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesACompleteExample.cpp.o -c /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesACompleteExample.cpp",
+  "file": "/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesACompleteExample.cpp"
 }
 ]

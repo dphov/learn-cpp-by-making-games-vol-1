@@ -6,22 +6,11 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
-/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesInput.cpp
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section17/CursesACompleteExample.cpp
 iostream
 -
 ncurses.h
-=======
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/PigLatin.cpp
-iostream
 -
-string
--
-Utils.h
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/Utils.h
-
-/Users/dphov/Documents/CurrentProjects/learn-cpp-by-making-games-vol-1/section16/Utils.h
-string
->>>>>>> 33591fbc9b1b4ee97f8af02a5d9f09fb20339d8c
+ctime
 -
 
