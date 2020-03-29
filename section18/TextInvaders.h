@@ -5,6 +5,9 @@
 #ifndef _TEXTINVADERS_H_
 #define _TEXTINVADERS_H_
 
+#include <string>
+#include <vector>
+
 /*
  * Space Invaders:
  *
@@ -112,7 +115,7 @@
  * Direction (left or right)
  * Animation State
  * Size of each alien
- * State - alive, dead, exploding
+ * State of each alien - alive, dead, exploding
  * Alien bombs
  *
  * Alien UFO
@@ -150,5 +153,105 @@
  * ----------------
  * vector of scores
  */
- 
+
+enum
+{
+  SHIELD_SPRITE_HEIGHT = 3,
+  NUM_ALIEN_ROWS = 5,
+  NUM_ALIEN_COLUMNS = 11,
+  MAX_NUMBER_OF_ALIEN_BOMBS = 3,
+  MAX_NUMBER_OF_LIVES
+};
+
+enum AlienState
+{
+  AS_ALIVE = 0,
+  AS_DEAD,
+  AS_EXPLODING
+};
+
+enum GameState
+{
+  GS_INTRO = 0,
+  GS_HIGH_SCORES,
+  GS_PLAY,
+  GS_PLAYER_DEAD,
+  GS_WAIT,
+  GS_GAME_OVER
+};
+
+struct Position
+{
+  int x;
+  int y;
+};
+
+struct Size
+{
+  int width;
+  int height;
+};
+
+struct Player
+{
+  Position position;
+  Position missile;
+  Size spriteSize;
+  int animation;
+  int lives; // max 3
+  int score;
+};
+
+struct Shield
+{
+  Position position;
+  char * sprite[SHIELD_SPRITE_HEIGHT];
+};
+
+struct AlienBomb
+{
+  Position position;
+  int animation;
+};
+
+struct AlienSwarm
+{
+ Position position;
+ AlienState aliens[NUM_ALIEN_ROWS][NUM_ALIEN_COLUMNS];
+ AlienBomb bombs[MAX_NUMBER_OF_ALIEN_BOMBS];
+ Size spriteSize;
+ int animation;
+ int direction; // > 0 -  for going right,  < 0 - for going left. 1 or -1
+ int numberOfBombsInPlay;
+ int movementTime; // this is going capture how fast the aliens should be going
+ int explosionTimer; // this is going to capture how long to explode for
+ int numAliensLeft; // this is to capture when to go to the next level
+ int line; // this to capture when the aliens win - starts at the current level and decreases to 0 - once it's 0 the the aliens win
+};
+
+struct AlienUFO
+{
+  Position position;
+  Size size;
+  int points; // from 50 - 200
+};
+
+struct Score
+{
+  int score;
+  std::string name; // std:: because we're not saying using namespace std; - in this file
+};
+
+struct HighScoreTable
+{
+  std::vector<Score> scores;
+};
+
+struct Game
+{
+    Size windowSize;
+    GameState currentState;
+    int level;
+};
+
 #endif //_TEXTINVADERS_H_
