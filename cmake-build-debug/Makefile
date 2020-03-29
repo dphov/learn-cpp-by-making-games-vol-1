@@ -123,59 +123,59 @@ learn-cpp-by-making-games-vol1/fast:
 	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/build
 .PHONY : learn-cpp-by-making-games-vol1/fast
 
-section17/CursesMakingOurNewUtils.o: section17/CursesMakingOurNewUtils.cpp.o
+section18/CursesUtils.o: section18/CursesUtils.cpp.o
 
-.PHONY : section17/CursesMakingOurNewUtils.o
-
-# target to build an object file
-section17/CursesMakingOurNewUtils.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.o
-.PHONY : section17/CursesMakingOurNewUtils.cpp.o
-
-section17/CursesMakingOurNewUtils.i: section17/CursesMakingOurNewUtils.cpp.i
-
-.PHONY : section17/CursesMakingOurNewUtils.i
-
-# target to preprocess a source file
-section17/CursesMakingOurNewUtils.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.i
-.PHONY : section17/CursesMakingOurNewUtils.cpp.i
-
-section17/CursesMakingOurNewUtils.s: section17/CursesMakingOurNewUtils.cpp.s
-
-.PHONY : section17/CursesMakingOurNewUtils.s
-
-# target to generate assembly for a file
-section17/CursesMakingOurNewUtils.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesMakingOurNewUtils.cpp.s
-.PHONY : section17/CursesMakingOurNewUtils.cpp.s
-
-section17/CursesUtils.o: section17/CursesUtils.cpp.o
-
-.PHONY : section17/CursesUtils.o
+.PHONY : section18/CursesUtils.o
 
 # target to build an object file
-section17/CursesUtils.cpp.o:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.o
-.PHONY : section17/CursesUtils.cpp.o
+section18/CursesUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/CursesUtils.cpp.o
+.PHONY : section18/CursesUtils.cpp.o
 
-section17/CursesUtils.i: section17/CursesUtils.cpp.i
+section18/CursesUtils.i: section18/CursesUtils.cpp.i
 
-.PHONY : section17/CursesUtils.i
+.PHONY : section18/CursesUtils.i
 
 # target to preprocess a source file
-section17/CursesUtils.cpp.i:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.i
-.PHONY : section17/CursesUtils.cpp.i
+section18/CursesUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/CursesUtils.cpp.i
+.PHONY : section18/CursesUtils.cpp.i
 
-section17/CursesUtils.s: section17/CursesUtils.cpp.s
+section18/CursesUtils.s: section18/CursesUtils.cpp.s
 
-.PHONY : section17/CursesUtils.s
+.PHONY : section18/CursesUtils.s
 
 # target to generate assembly for a file
-section17/CursesUtils.cpp.s:
-	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section17/CursesUtils.cpp.s
-.PHONY : section17/CursesUtils.cpp.s
+section18/CursesUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/CursesUtils.cpp.s
+.PHONY : section18/CursesUtils.cpp.s
+
+section18/TextInvaders.o: section18/TextInvaders.cpp.o
+
+.PHONY : section18/TextInvaders.o
+
+# target to build an object file
+section18/TextInvaders.cpp.o:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/TextInvaders.cpp.o
+.PHONY : section18/TextInvaders.cpp.o
+
+section18/TextInvaders.i: section18/TextInvaders.cpp.i
+
+.PHONY : section18/TextInvaders.i
+
+# target to preprocess a source file
+section18/TextInvaders.cpp.i:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/TextInvaders.cpp.i
+.PHONY : section18/TextInvaders.cpp.i
+
+section18/TextInvaders.s: section18/TextInvaders.cpp.s
+
+.PHONY : section18/TextInvaders.s
+
+# target to generate assembly for a file
+section18/TextInvaders.cpp.s:
+	$(MAKE) -f CMakeFiles/learn-cpp-by-making-games-vol1.dir/build.make CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/TextInvaders.cpp.s
+.PHONY : section18/TextInvaders.cpp.s
 
 # Help Target
 help:
@@ -186,12 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... learn-cpp-by-making-games-vol1"
-	@echo "... section17/CursesMakingOurNewUtils.o"
-	@echo "... section17/CursesMakingOurNewUtils.i"
-	@echo "... section17/CursesMakingOurNewUtils.s"
-	@echo "... section17/CursesUtils.o"
-	@echo "... section17/CursesUtils.i"
-	@echo "... section17/CursesUtils.s"
+	@echo "... section18/CursesUtils.o"
+	@echo "... section18/CursesUtils.i"
+	@echo "... section18/CursesUtils.s"
+	@echo "... section18/TextInvaders.o"
+	@echo "... section18/TextInvaders.i"
+	@echo "... section18/TextInvaders.s"
 .PHONY : help
 
 
