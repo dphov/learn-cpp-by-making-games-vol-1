@@ -5,7 +5,7 @@
 #include "CursesUtils.h"
 #include <ncurses.h>
 
-void InitializeCurses(bool noDelay)
+void CursesUtils::InitializeCurses(bool noDelay)
 {
     initscr();
     noecho();
@@ -14,42 +14,50 @@ void InitializeCurses(bool noDelay)
     keypad(stdscr, true);
 }
 
-void ShutdownCurses()
+void CursesUtils::ShutdownCurses()
 {
     endwin();
 }
 
-void ClearScreen()
+void CursesUtils::ClearScreen()
 {
     clear();
 }
 
-void RefreshScreen()
+void CursesUtils::RefreshScreen()
 {
     refresh();
 }
 
-int ScreenWidth()
+int CursesUtils::ScreenWidth()
 {
     return COLS;
 }
 
-int ScreenHeight()
+int CursesUtils::ScreenHeight()
 {
     return LINES;
 }
 
-int GetChar()
+int CursesUtils::GetChar()
 {
     return getch();
 }
 
-void DrawCharacter(int xPos, int yPos, char aCharacter)
+void CursesUtils::DrawCharacter(int xPos, int yPos, char aCharacter)
 {
     mvaddch(yPos, xPos, aCharacter);
 }
 
-void MoveCursor(int xPos, int yPos)
+void CursesUtils::MoveCursor(int xPos, int yPos)
 {
     move(yPos, xPos);
+}
+
+void CursesUtils::DrawSprite(int xPos, int yPos, const char *sprite[], int spriteHeight, int offset)
+{
+    for(int h = 0; h < spriteHeight; h++)
+    {
+        mvprintw(yPos + h, xPos, "%s", sprite[h]);
+    }
 }
