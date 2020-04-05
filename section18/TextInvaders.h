@@ -159,9 +159,11 @@ const char * PLAYER_SPRITE[] = {" =A= ", "====="};
 
 const char PLAYER_MISSILE_SPRITE = '|';
 
+const char * SHIELD_SPRITE[] = {"/IIIII\\", "IIIIIII", "I/   \\I"};
 
 enum
 {
+  SHIELD_SPRITE_WIDTH = 7,
   SHIELD_SPRITE_HEIGHT = 3,
   NUM_ALIEN_ROWS = 5,
   NUM_ALIEN_COLUMNS = 11,
@@ -172,7 +174,9 @@ enum
   NOT_IN_PLAY = -1,
   PLAYER_MOVEMENT_AMOUNT = 2,
   PLAYER_MISSILE_SPEED = 1,
-  FPS = 20
+  FPS = 20,
+  NUM_SHIELDS = 4,
+  
 };
 
 enum AlienState

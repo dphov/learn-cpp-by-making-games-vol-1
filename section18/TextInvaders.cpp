@@ -4,6 +4,9 @@
 
 #include <iostream>
 #include <ctime>
+#include <cstring>
+#include <cmath>
+
 #include "TextInvaders.h"
 #include "CursesUtils.h"
 
@@ -14,22 +17,35 @@ void InitPlayer(const Game & game, Player & player);
 void ResetPlayer(const Game & game, Player & player);
 void ResetMissile(Player & player);
 int HandleInput(const Game & game, Player & player);
-void UpdateGame(const Game & game, Player & player);
-void DrawGame(const Game & game, const Player & player);
+void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields);
+void DrawGame(const Game & game, const Player & player, Shield shields[], int numberOfShields);
 void MovePlayer(const Game & game, Player & player, int dx);
 void PlayerShoot(Player &player);
 void DrawPlayer(const Player & player, const char * sprite[]);
 void UpdateMissile(Player & player);
+void InitShields(const Game & game, Shield shields[], int numberOfShields);
+void CleanUpShields(Shield shields[], int numberOfShields);
+void DrawShields(const Shield shields[], int numberOfShields);
+// returns the shield index of which shield got hit
+// return NOT_IN_PLAY if nothing was hit
+// also returns the shield collision point
+
+int IsCollision(const Position &projectile, const Shield shields[], int numberOfShields, Position &shieldCollisionPoint);
+
+void ResolveShieldCollision(Shield shields[], int shieldIndex, const Position & shieldCollisionPoint);
 
 int main()
 {
     Game game;
     Player player;
+    Shield shields[NUM_SHIELDS];
+    
     
     CursesUtils::InitializeCurses(true);
     
     InitGame(game);
     InitPlayer(game, player);
+    InitShields(game, shields, NUM_SHIELDS);
     
     bool quit = false;
     char input;
@@ -48,9 +64,9 @@ int main()
             {
                 lastTime = currentTime;
                 
-                UpdateGame(game, player);
+                UpdateGame(game, player, shields, NUM_SHIELDS);
                 CursesUtils::ClearScreen();
-                DrawGame(game, player);
+                DrawGame(game, player, shields, NUM_SHIELDS);
                 CursesUtils::RefreshScreen();
             }
         }
@@ -60,6 +76,7 @@ int main()
         }
     }
     
+    CleanUpShields(shields, NUM_SHIELDS);
     CursesUtils::ShutdownCurses();
     
     return 0;
@@ -113,14 +130,23 @@ int HandleInput(const Game & game, Player & player)
     }
     return input;
 }
-void UpdateGame(const Game &game, Player &player)
+void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields)
 {
     UpdateMissile(player);
+    
+    Position shieldCollisionPoint;
+    
+    int shieldIndex = IsCollision(player.missile, shields, numberOfShields, shieldCollisionPoint);
+    if(shieldIndex != NOT_IN_PLAY)
+    {
+        ResetMissile(player);
+        ResolveShieldCollision(shields, shieldIndex, shieldCollisionPoint);
+    }
 }
-void DrawGame(const Game &game, const Player &player)
+void DrawGame(const Game & game, const Player & player, Shield shields[], int numberOfShields)
 {
     DrawPlayer(player, PLAYER_SPRITE);
-    
+    DrawShields(shields, NUM_SHIELDS);
 }
 void MovePlayer(const Game & game, Player & player, int dx)
 {
@@ -168,4 +194,81 @@ void UpdateMissile(Player & player)
             ResetMissile(player);
         }
     }
+}
+
+void InitShields(const Game & game, Shield shields[], int numberOfShields)
+{
+    // evenly spacing it out
+    int firstPadding = ceil(float(game.windowSize.width - numberOfShields * SHIELD_SPRITE_WIDTH) / float(numberOfShields + 1));
+    int xPadding = floor(float(game.windowSize.width - numberOfShields * SHIELD_SPRITE_WIDTH) / float(numberOfShields + 1));
+    
+    for(int i = 0; i < numberOfShields; i++)
+    {
+        Shield & shield = shields[i];
+        shield.position.x = firstPadding + i * (SHIELD_SPRITE_WIDTH + xPadding);
+        shield.position.y = game.windowSize.height - PLAYER_SPRITE_HEIGHT - 1 - SHIELD_SPRITE_HEIGHT - 2;
+        
+        for( int row = 0; row < SHIELD_SPRITE_HEIGHT; row++)
+        {
+            shield.sprite[row] = new char[SHIELD_SPRITE_WIDTH + 1];
+            strcpy(shield.sprite[row], SHIELD_SPRITE[row]);
+        }
+    }
+}
+
+void CleanUpShields(Shield shields[], int numberOfShields)
+{
+    for(int i = 0; i < numberOfShields; i++)
+    {
+        Shield & shield = shields[i];
+        
+        for(int row = 0; row < SHIELD_SPRITE_HEIGHT; row++)
+        {
+            delete [] shield.sprite[row];
+        }
+    }
+}
+
+void DrawShields(const Shield shields[], int numberOfShields)
+{
+    for(int i = 0; i < numberOfShields; i++)
+    {
+        const Shield & shield = shields[i];
+        
+        CursesUtils::DrawSprite(shield.position.x, shield.position.y, (const char **) shield.sprite, SHIELD_SPRITE_HEIGHT);
+    }
+}
+
+int IsCollision(const Position &projectile, const Shield shields[], int numberOfShields, Position &shieldCollisionPoint)
+{
+    shieldCollisionPoint.x = NOT_IN_PLAY;
+    shieldCollisionPoint.y = NOT_IN_PLAY;
+    
+    if(projectile.y != NOT_IN_PLAY)
+    {
+        for(int i = 0; i < numberOfShields; i++)
+        {
+            const Shield & shield = shields[i];
+            
+            if(
+                (projectile.x >= shield.position.x && projectile.x < shield.position.x + SHIELD_SPRITE_WIDTH)      // is it in line horizontally
+                && (projectile.y >= shield.position.y && projectile.y < shield.position.y + SHIELD_SPRITE_HEIGHT)  // is it in line vertically
+                && shield.sprite[projectile.y - shield.position.y][projectile.x - shield.position.x] != ' '        // does it collide with part of the shield
+                )
+            {
+                // we collided
+                shieldCollisionPoint.x = projectile.x - shield.position.x;
+                shieldCollisionPoint.y = projectile.y - shield.position.y;
+                return i;
+            }
+        }
+    }
+    
+    return NOT_IN_PLAY;
+}
+
+
+void ResolveShieldCollision(Shield shields[], int shieldIndex, const Position & shieldCollisionPoint)
+{
+    shields[shieldIndex].sprite[shieldCollisionPoint.y][shieldCollisionPoint.x] = ' ';
 }

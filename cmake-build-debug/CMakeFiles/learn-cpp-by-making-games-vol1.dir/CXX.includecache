@@ -15,6 +15,10 @@ iostream
 -
 ctime
 -
+cstring
+-
+cmath
+-
 TextInvaders.h
 /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.h
 CursesUtils.h
