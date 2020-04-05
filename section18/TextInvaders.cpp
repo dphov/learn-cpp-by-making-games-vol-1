@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <ctime>
 #include "TextInvaders.h"
 #include "CursesUtils.h"
 
@@ -16,6 +17,9 @@ int HandleInput(const Game & game, Player & player);
 void UpdateGame(const Game & game, Player & player);
 void DrawGame(const Game & game, const Player & player);
 void MovePlayer(const Game & game, Player & player, int dx);
+void PlayerShoot(Player &player);
+void DrawPlayer(const Player & player, const char * sprite[]);
+void UpdateMissile(Player & player);
 
 int main()
 {
@@ -30,15 +34,25 @@ int main()
     bool quit = false;
     char input;
     
+    clock_t lastTime = clock();
+    
     while(!quit)
     {
         input = HandleInput(game, player);
         if(input != 'q')
         {
-            UpdateGame(game, player);
-            CursesUtils::ClearScreen();
-            DrawGame(game, player);
-            CursesUtils::RefreshScreen();
+            clock_t currentTime = clock();
+            clock_t dt = currentTime - lastTime;
+            
+            if(dt > CLOCKS_PER_SEC/FPS)
+            {
+                lastTime = currentTime;
+                
+                UpdateGame(game, player);
+                CursesUtils::ClearScreen();
+                DrawGame(game, player);
+                CursesUtils::RefreshScreen();
+            }
         }
         else
         {
@@ -93,18 +107,19 @@ int HandleInput(const Game & game, Player & player)
             break;
         case CursesUtils::AK_RIGHT:
             MovePlayer(game, player, PLAYER_MOVEMENT_AMOUNT);
-        
             break;
+        case ' ':
+            PlayerShoot(player);
     }
-    return ' ';
+    return input;
 }
 void UpdateGame(const Game &game, Player &player)
 {
-
+    UpdateMissile(player);
 }
 void DrawGame(const Game &game, const Player &player)
 {
-    CursesUtils::DrawSprite(player.position.x, player.position.y, PLAYER_SPRITE, player.spriteSize.height);
+    DrawPlayer(player, PLAYER_SPRITE);
     
 }
 void MovePlayer(const Game & game, Player & player, int dx)
@@ -120,5 +135,37 @@ void MovePlayer(const Game & game, Player & player, int dx)
     else
     {
         player.position.x += dx;
+    }
+}
+
+void PlayerShoot(Player & player)
+{
+    if(player.missile.x == NOT_IN_PLAY || player.missile.y == NOT_IN_PLAY)
+    {
+        player.missile.y = player.position.y - 1; // one row above the player
+        player.missile.x = player.position.x + player.spriteSize.width / 2;
+    }
+}
+
+void DrawPlayer(const Player & player, const char * sprite[])
+{
+    CursesUtils::DrawSprite(player.position.x, player.position.y, sprite, player.spriteSize.height);
+    
+    if(player.missile.x != NOT_IN_PLAY)
+    {
+        CursesUtils::DrawCharacter(player.missile.x, player.missile.y, PLAYER_MISSILE_SPRITE);
+    }
+}
+
+void UpdateMissile(Player & player)
+{
+    if(player.missile.y != NOT_IN_PLAY)
+    {
+        player.missile.y -= PLAYER_MISSILE_SPEED;
+        
+        if(player.missile.y < 0)
+        {
+            ResetMissile(player);
+        }
     }
 }

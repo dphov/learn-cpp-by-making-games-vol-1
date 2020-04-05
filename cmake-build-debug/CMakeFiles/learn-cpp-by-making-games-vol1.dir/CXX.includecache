@@ -6,11 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/CursesUtils.h
+ncurses.h
+-
+
 /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.cpp
 iostream
 -
+ctime
+-
 TextInvaders.h
 /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.h
+CursesUtils.h
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/CursesUtils.h
 
 /Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.h
+string
+-
+vector
+-
 

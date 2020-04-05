@@ -157,6 +157,9 @@
 
 const char * PLAYER_SPRITE[] = {" =A= ", "====="};
 
+const char PLAYER_MISSILE_SPRITE = '|';
+
+
 enum
 {
   SHIELD_SPRITE_HEIGHT = 3,
@@ -167,7 +170,9 @@ enum
   PLAYER_SPRITE_WIDTH = 5,
   PLAYER_SPRITE_HEIGHT = 2,
   NOT_IN_PLAY = -1,
-  PLAYER_MOVEMENT_AMOUNT = 2
+  PLAYER_MOVEMENT_AMOUNT = 2,
+  PLAYER_MISSILE_SPEED = 1,
+  FPS = 20
 };
 
 enum AlienState

@@ -4,6 +4,7 @@
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/CursesUtils.cpp.o: ../section18/CursesUtils.cpp
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/CursesUtils.cpp.o: ../section18/CursesUtils.h
 
+CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/TextInvaders.cpp.o: ../section18/CursesUtils.h
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/TextInvaders.cpp.o: ../section18/TextInvaders.cpp
 CMakeFiles/learn-cpp-by-making-games-vol1.dir/section18/TextInvaders.cpp.o: ../section18/TextInvaders.h
 
