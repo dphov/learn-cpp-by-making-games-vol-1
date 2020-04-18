@@ -17,7 +17,7 @@ void InitPlayer(const Game & game, Player & player);
 void ResetPlayer(const Game & game, Player & player);
 void ResetMissile(Player & player);
 int HandleInput(const Game & game, Player & player);
-void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields);
+void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields, AlienSwarm & aliens);
 void DrawGame(const Game & game, const Player & player, Shield shields[], int numberOfShields, const AlienSwarm & aliens);
 void MovePlayer(const Game & game, Player & player, int dx);
 void PlayerShoot(Player &player);
@@ -34,6 +34,9 @@ int IsCollision(const Position &projectile, const Shield shields[], int numberOf
 void ResolveShieldCollision(Shield shields[], int shieldIndex, const Position & shieldCollisionPoint);
 void InitAliens(const Game & game, AlienSwarm & aliens);
 void DrawAliens(const AlienSwarm & aliens);
+int IsCollision(const Player & player, const AlienSwarm & aliens, Position & alienCollisionPositionInArray);
+int ResolveAlienCollision(AlienSwarm & aliens, const Position & hitPositionInAliensArray);
+
 
 
 int main()
@@ -68,7 +71,7 @@ int main()
             {
                 lastTime = currentTime;
                 
-                UpdateGame(game, player, shields, NUM_SHIELDS);
+                UpdateGame(game, player, shields, NUM_SHIELDS, aliens);
                 CursesUtils::ClearScreen();
                 DrawGame(game, player, shields, NUM_SHIELDS, aliens);
                 CursesUtils::RefreshScreen();
@@ -134,7 +137,8 @@ int HandleInput(const Game & game, Player & player)
     }
     return input;
 }
-void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields)
+
+void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields, AlienSwarm & aliens)
 {
     UpdateMissile(player);
     
@@ -145,6 +149,14 @@ void UpdateGame(const Game & game, Player & player, Shield shields[], int number
     {
         ResetMissile(player);
         ResolveShieldCollision(shields, shieldIndex, shieldCollisionPoint);
+    }
+    
+    Position playerAlienCollisionPoint;
+    
+    if(IsCollision(player, aliens, playerAlienCollisionPoint))
+    {
+        ResetMissile(player);
+        player.score += ResolveAlienCollision(aliens, playerAlienCollisionPoint);
     }
 }
 void DrawGame(const Game & game, const Player & player, Shield shields[], int numberOfShields, const AlienSwarm & aliens)
@@ -298,7 +310,7 @@ void InitAliens(const Game & game, AlienSwarm & aliens)
     aliens.position.x = (game.windowSize.width - NUM_ALIEN_COLUMNS * (aliens.spriteSize.width + ALIENS_X_PADDING) )/ 2;
     aliens.position.y = (game.windowSize.height - NUM_ALIEN_COLUMNS - NUM_ALIEN_ROWS * aliens.spriteSize.height - ALIENS_Y_PADDING * (NUM_ALIEN_ROWS - 1) - 3 + game.level);
     aliens.line = NUM_ALIEN_COLUMNS - (game.level - 1);
-    aliens.explosionTimer = 0;
+    aliens.explosionTimer = NOT_IN_PLAY;
     
 }
 
@@ -315,6 +327,10 @@ void DrawAliens(const AlienSwarm & aliens)
         {
             CursesUtils::DrawSprite(xPos, yPos, ALIEN30_SPRITE, aliens.spriteSize.height);
         }
+        else if(aliens.aliens[0][col] == AS_EXPLODING)
+        {
+            CursesUtils::DrawSprite(xPos, yPos, ALIEN_EXPLOSION, aliens.spriteSize.height);
+        }
     }
     // draw 2 rows of the 20 point aliens
     const int NUM_20_POINT_ALIEN_ROWS = 2;
@@ -329,6 +345,10 @@ void DrawAliens(const AlienSwarm & aliens)
             if(aliens.aliens[NUM_30_POINT_ALIEN_ROWS + row][col] == AS_ALIVE)
             {
                 CursesUtils::DrawSprite(xPos, yPos, ALIEN20_SPRITE, aliens.spriteSize.height);
+            }
+            else if (aliens.aliens[NUM_30_POINT_ALIEN_ROWS + row][col] == AS_EXPLODING)
+            {
+                CursesUtils::DrawSprite(xPos, yPos, ALIEN_EXPLOSION, aliens.spriteSize.height);
             }
         }
     }
@@ -348,6 +368,61 @@ void DrawAliens(const AlienSwarm & aliens)
             {
                 CursesUtils::DrawSprite(xPos, yPos, ALIEN10_SPRITE, aliens.spriteSize.height);
             }
+            else if (aliens.aliens[NUM_30_POINT_ALIEN_ROWS + NUM_20_POINT_ALIEN_ROWS + row][col] == AS_EXPLODING)
+            {
+                CursesUtils::DrawSprite(xPos, yPos, ALIEN_EXPLOSION, aliens.spriteSize.height);
+            }
         }
+    }
+}
+
+int IsCollision(const Player & player, const AlienSwarm & aliens, Position & alienCollisionPositionInArray)
+{
+    alienCollisionPositionInArray.x = NOT_IN_PLAY;
+    alienCollisionPositionInArray.y = NOT_IN_PLAY;
+    
+    for(int row = 0; row < NUM_ALIEN_ROWS; row++)
+    {
+        for(int col = 0; col < NUM_ALIEN_COLUMNS; col++)
+        {
+            int xPos = aliens.position.x + col * (aliens.spriteSize.width + ALIENS_X_PADDING);
+            int yPos = aliens.position.y + row * (aliens.spriteSize.height + ALIENS_Y_PADDING);
+            
+            if(aliens.aliens[row][col] == AS_ALIVE &&
+            player.missile.x >= xPos &&
+            player.missile.x < xPos + aliens.spriteSize.width && // is the missile within the x boundary of the current alien
+            player.missile.y >= yPos &&
+            player.missile.y < yPos + aliens.spriteSize.height) // is the missile within the y boundary of the current alien
+            {
+                alienCollisionPositionInArray.x = col;
+                alienCollisionPositionInArray.y = row;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int ResolveAlienCollision(AlienSwarm & aliens, const Position & hitPositionInAliensArray)
+{
+    aliens.aliens[hitPositionInAliensArray.y][hitPositionInAliensArray.x] = AS_EXPLODING;
+    aliens.numAliensLeft--;
+    
+    if(aliens.explosionTimer == NOT_IN_PLAY)
+    {
+        aliens.explosionTimer = ALIEN_EXPLOSION_TIME;
+    }
+    
+    if(hitPositionInAliensArray.y == 0)
+    {
+        return 30;
+    }
+    else if (hitPositionInAliensArray.y >=1 && hitPositionInAliensArray.y < 3)
+    {
+        return 20;
+    }
+    else
+    {
+        return 10;
     }
 }
