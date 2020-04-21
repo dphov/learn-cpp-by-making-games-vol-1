@@ -58,6 +58,6 @@ void CursesUtils::DrawSprite(int xPos, int yPos, const char *sprite[], int sprit
 {
     for(int h = 0; h < spriteHeight; h++)
     {
-        mvprintw(yPos + h, xPos, "%s", sprite[h]);
+        mvprintw(yPos + h, xPos, "%s", sprite[h+offset]);
     }
 }
