@@ -10,14 +10,16 @@
 #include "TextInvaders.h"
 #include "CursesUtils.h"
 
+#include <cstdlib>
+
 using namespace std;
 
 void InitGame(Game & game);
 void InitPlayer(const Game & game, Player & player);
 void ResetPlayer(const Game & game, Player & player);
 void ResetMissile(Player & player);
-int HandleInput(const Game & game, Player & player);
-void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields, AlienSwarm & aliens);
+int HandleInput(Game & game, Player & player);
+void UpdateGame(Game & game, Player & player, Shield shields[], int numberOfShields, AlienSwarm & aliens);
 void DrawGame(const Game & game, const Player & player, Shield shields[], int numberOfShields, const AlienSwarm & aliens);
 void MovePlayer(const Game & game, Player & player, int dx);
 void PlayerShoot(Player &player);
@@ -36,14 +38,23 @@ void InitAliens(const Game & game, AlienSwarm & aliens);
 void DrawAliens(const AlienSwarm & aliens);
 int IsCollision(const Player & player, const AlienSwarm & aliens, Position & alienCollisionPositionInArray);
 int ResolveAlienCollision(AlienSwarm & aliens, const Position & hitPositionInAliensArray);
-void UpdateAliens(const Game & game, AlienSwarm & aliens, Player & player, Shield shields[], int numberOfShields);
+bool UpdateAliens(const Game & game, AlienSwarm & aliens, Player & player, Shield shields[], int numberOfShields);
 void ResetMovementTime(AlienSwarm & aliens);
 void FindEmptyRowsAndColumns(const AlienSwarm & aliens, int & emptyColsLeft, int & emptyColsRight, int & emptyRowsBottom);
 void DestroyShields(const AlienSwarm & aliens, Shield shields[], int numberOfShields);
 void CollideShieldsWithAlien(Shield shields[], int numberOfShields, int xPos, int yPos, const Size & size);
 
+bool ShouldShootBomb(const AlienSwarm & aliens);
+void ShootBomb(AlienSwarm & aliens, int columnToShoot);
+bool UpdateBombs(const Game & game, AlienSwarm & aliens, Player & player, Shield shield[], int numberOfShields);
+bool IsCollision(const Position & projectile, const Position & spitePosition, const Size & spriteSize);
+
+
+
 int main()
 {
+    srand(time(NULL));
+    
     Game game;
     Player player;
     Shield shields[NUM_SHIELDS];
@@ -122,7 +133,7 @@ void ResetMissile(Player & player)
     player.missile.y = NOT_IN_PLAY;
 }
 
-int HandleInput(const Game & game, Player & player)
+int HandleInput(Game & game, Player & player)
 {
     int input = CursesUtils::GetChar();
     switch(input)
@@ -130,48 +141,102 @@ int HandleInput(const Game & game, Player & player)
         case 'q':
             return input;
         case CursesUtils::AK_LEFT:
-            MovePlayer(game, player, -PLAYER_MOVEMENT_AMOUNT);
+            if(game.currentState == GS_PLAY)
+            {
+                MovePlayer(game, player, -PLAYER_MOVEMENT_AMOUNT);
+            }
             break;
         case CursesUtils::AK_RIGHT:
-            MovePlayer(game, player, PLAYER_MOVEMENT_AMOUNT);
+            if(game.currentState == GS_PLAY)
+            {
+                MovePlayer(game, player, PLAYER_MOVEMENT_AMOUNT);
+            }
             break;
         case ' ':
-            PlayerShoot(player);
+            if(game.currentState == GS_PLAY)
+            {
+                PlayerShoot(player);
+            }
+            else if(game.currentState == GS_PLAYER_DEAD)
+            {
+                player.lives--;
+                player.animation = 0;
+                if(player.lives == 0)
+                {
+                    game.currentState = GS_GAME_OVER;
+                }
+                else
+                {
+                    game.currentState = GS_WAIT;
+                    game.waitTimer = 10;
+                }
+            }
     }
     return input;
 }
 
-void UpdateGame(const Game & game, Player & player, Shield shields[], int numberOfShields, AlienSwarm & aliens)
+void UpdateGame(Game & game, Player & player, Shield shields[], int numberOfShields, AlienSwarm & aliens)
 {
-    UpdateMissile(player);
-    
-    Position shieldCollisionPoint;
-    
-    int shieldIndex = IsCollision(player.missile, shields, numberOfShields, shieldCollisionPoint);
-    if(shieldIndex != NOT_IN_PLAY)
+    if(game.currentState == GS_PLAY)
     {
-        ResetMissile(player);
-        ResolveShieldCollision(shields, shieldIndex, shieldCollisionPoint);
+        UpdateMissile(player);
+    
+        Position shieldCollisionPoint;
+    
+        int shieldIndex = IsCollision(player.missile, shields, numberOfShields, shieldCollisionPoint);
+        if(shieldIndex != NOT_IN_PLAY)
+        {
+            ResetMissile(player);
+            ResolveShieldCollision(shields, shieldIndex, shieldCollisionPoint);
+        }
+    
+        Position playerAlienCollisionPoint;
+    
+        if(IsCollision(player, aliens, playerAlienCollisionPoint))
+        {
+            ResetMissile(player);
+            player.score += ResolveAlienCollision(aliens, playerAlienCollisionPoint);
+        }
+    
+        if(UpdateAliens(game, aliens, player, shields, numberOfShields))
+        {
+            game.currentState = GS_PLAYER_DEAD;
+        }
     }
-    
-    Position playerAlienCollisionPoint;
-    
-    if(IsCollision(player, aliens, playerAlienCollisionPoint))
+    else if(game.currentState == GS_PLAYER_DEAD)
     {
-        ResetMissile(player);
-        player.score += ResolveAlienCollision(aliens, playerAlienCollisionPoint);
+        player.animation = (player.animation + 1) % 2;
     }
-    
-    UpdateAliens(game, aliens, player, shields, numberOfShields);
+    else if(game.currentState == GS_WAIT)
+    {
+        game.waitTimer--;
+        
+        if(game.waitTimer == 0)
+        {
+            game.currentState = GS_PLAY;
+        }
+    }
 }
+
 void DrawGame(const Game & game, const Player & player, Shield shields[], int numberOfShields, const AlienSwarm & aliens)
 {
-    DrawPlayer(player, PLAYER_SPRITE);
-    
-    DrawShields(shields, NUM_SHIELDS);
-    
-    DrawAliens(aliens);
+    if(game.currentState == GS_PLAY || game.currentState == GS_PLAYER_DEAD || game.currentState == GS_WAIT)
+    {
+        if(game.currentState == GS_PLAY || game.currentState == GS_WAIT)
+        {
+            DrawPlayer(player, PLAYER_SPRITE);
+        }
+        else
+        {
+            DrawPlayer(player, PLAYER_EXPLOSION_SPRITE);
+        }
+        
+        DrawShields(shields, NUM_SHIELDS);
+        
+        DrawAliens(aliens);
+    }
 }
+
 void MovePlayer(const Game & game, Player & player, int dx)
 {
     if (player.position.x + player.spriteSize.width + dx > game.windowSize.width) // make sure player doesn't go off the screen to the right
@@ -199,7 +264,7 @@ void PlayerShoot(Player & player)
 
 void DrawPlayer(const Player & player, const char * sprite[])
 {
-    CursesUtils::DrawSprite(player.position.x, player.position.y, sprite, player.spriteSize.height);
+    CursesUtils::DrawSprite(player.position.x, player.position.y, sprite, player.spriteSize.height, player.animation * player.spriteSize.height);
     
     if(player.missile.x != NOT_IN_PLAY)
     {
@@ -318,8 +383,15 @@ void InitAliens(const Game & game, AlienSwarm & aliens)
     aliens.position.y = game.windowSize.height - NUM_ALIEN_COLUMNS - NUM_ALIEN_ROWS * aliens.spriteSize.height - ALIENS_Y_PADDING * (NUM_ALIEN_ROWS - 1) - 3 + game.level;
     aliens.line = NUM_ALIEN_COLUMNS - (game.level - 1);
     aliens.explosionTimer = NOT_IN_PLAY;
-    ResetMovementTime(aliens);
     
+    for(int i = 0; i < MAX_NUMBER_OF_ALIEN_BOMBS; i++)
+    {
+        aliens.bombs[i].animation = 0;
+        aliens.bombs[i].position.x = NOT_IN_PLAY;
+        aliens.bombs[i].position.y = NOT_IN_PLAY;
+    }
+    
+    ResetMovementTime(aliens);
 }
 
 void DrawAliens(const AlienSwarm & aliens)
@@ -382,6 +454,17 @@ void DrawAliens(const AlienSwarm & aliens)
             }
         }
     }
+    
+    if(aliens.numberOfBombsInPlay > 0)
+    {
+        for(int i = 0; i < MAX_NUMBER_OF_ALIEN_BOMBS; i++)
+        {
+            if(aliens.bombs[i].position.x != NOT_IN_PLAY && aliens.bombs[i].position.y != NOT_IN_PLAY)
+            {
+                CursesUtils::DrawCharacter(aliens.bombs[i].position.x, aliens.bombs[i].position.y, ALIEN_BOMB_SPRITE[aliens.bombs[i].animation]);
+            }
+        }
+    }
 }
 
 int IsCollision(const Player & player, const AlienSwarm & aliens, Position & alienCollisionPositionInArray)
@@ -435,8 +518,13 @@ int ResolveAlienCollision(AlienSwarm & aliens, const Position & hitPositionInAli
     }
 }
 
-void UpdateAliens(const Game & game, AlienSwarm & aliens, Player & player, Shield shields[], int numberOfShields)
+bool UpdateAliens(const Game & game, AlienSwarm & aliens, Player & player, Shield shields[], int numberOfShields)
 {
+    if(UpdateBombs(game, aliens, player, shields, numberOfShields))
+    {
+        return true;
+    }
+    
     if(aliens.explosionTimer >= 0)
     {
         aliens.explosionTimer--; //if explosion timer == 0 -> explosionTimer = NOT_IN_PLAY
@@ -484,6 +572,42 @@ void UpdateAliens(const Game & game, AlienSwarm & aliens, Player & player, Shiel
         aliens.animation = aliens.animation == 0 ? 1 : 0;
         DestroyShields(aliens, shields, numberOfShields);
     }
+    
+    if(!moveHorizontal)
+    {
+        int activeColumns[NUM_ALIEN_COLUMNS]; // columns that still exist - some aliens are still alive in that column
+        
+        int numActiveCols = 0;
+        
+        for(int c = emptyColsLeft; c < numberOfColumns; ++c)
+        {
+            for(int r = 0; r < NUM_ALIEN_ROWS; r++)
+            {
+                if(aliens.aliens[r][c] == AS_ALIVE)
+                {
+                    activeColumns[numActiveCols] = c;
+                    numActiveCols++;
+                    break;
+                }
+            }
+        }
+        
+        if(ShouldShootBomb(aliens))
+        {
+            if(numActiveCols>0)
+            {
+                int numberOfShots = ((rand() % 3) + 1) - aliens.numberOfBombsInPlay; //makes sure that there are only 3 bombs in play
+                
+                for(int i = 0; i < numberOfShots; i++)
+                {
+                    int columnToShoot = rand() % numActiveCols;
+                    
+                    ShootBomb(aliens, columnToShoot);
+                }
+            }
+        }
+    }
+    return false;
 }
 void ResetMovementTime(AlienSwarm & aliens)
 {
@@ -604,4 +728,88 @@ void CollideShieldsWithAlien(Shield shields[], int numberOfShields, int alienPos
             break;
         }
     }
+}
+
+bool ShouldShootBomb(const AlienSwarm & aliens)
+{
+    return int(rand() % (70 - int(float(NUM_ALIEN_ROWS * NUM_ALIEN_COLUMNS) / float(aliens.numAliensLeft + 1)))) == 1;
+}
+
+void ShootBomb(AlienSwarm & aliens, int columnToShoot)
+{
+    int bombId = NOT_IN_PLAY;
+    
+    for(int i = 0; i < MAX_NUMBER_OF_ALIEN_BOMBS; i++)
+    {
+        if(aliens.bombs[i].position.x == NOT_IN_PLAY || aliens.bombs[i].position.y == NOT_IN_PLAY)
+        {
+            bombId = i;
+            break;
+        }
+    }
+    
+    for(int r = NUM_ALIEN_ROWS - 1; r >= 0; r--)
+    {
+        if(aliens.aliens[r][columnToShoot] == AS_ALIVE)
+        {
+            int xPos = aliens.position.x + columnToShoot * (aliens.spriteSize.width + ALIENS_X_PADDING) + 1; // "middle of the alien"
+            int yPos = aliens.position.y + r * (aliens.spriteSize.height + ALIENS_Y_PADDING) + aliens.spriteSize.height; // bottom of the alien
+        
+            aliens.bombs[bombId].animation = 0;
+            aliens.bombs[bombId].position.x = xPos;
+            aliens.bombs[bombId].position.y = yPos;
+            aliens.numberOfBombsInPlay++;
+            break;
+        }
+    }
+}
+
+bool UpdateBombs(const Game & game, AlienSwarm & aliens, Player & player, Shield shields[], int numberOfShields)
+{
+    int numBombSprites = strlen(ALIEN_BOMB_SPRITE);
+    
+    for(int i = 0; i < MAX_NUMBER_OF_ALIEN_BOMBS; i++)
+    {
+        if(aliens.bombs[i].position.x != NOT_IN_PLAY && aliens.bombs[i].position.y != NOT_IN_PLAY)
+        {
+            aliens.bombs[i].position.y += ALIEN_BOMB_SPEED;
+            
+            aliens.bombs[i].animation = (aliens.bombs[i].animation + 1) % numBombSprites;
+            
+            Position collisionPoint;
+            int shieldIndex = IsCollision(aliens.bombs[i].position, shields, numberOfShields, collisionPoint);
+            
+            if(shieldIndex != NOT_IN_PLAY)
+            {
+                aliens.bombs[i].position.x = NOT_IN_PLAY;
+                aliens.bombs[i].position.y = NOT_IN_PLAY;
+                aliens.animation = 0;
+                aliens.numberOfBombsInPlay--;
+                ResolveShieldCollision(shields, shieldIndex, collisionPoint);
+            }
+            else if(IsCollision(aliens.bombs[i].position, player.position, player.spriteSize))
+            {
+                aliens.bombs[i].position.x = NOT_IN_PLAY;
+                aliens.bombs[i].position.y = NOT_IN_PLAY;
+                aliens.bombs[i].animation = 0;
+                aliens.numberOfBombsInPlay--;
+                return true;
+            }
+            else if(aliens.bombs[i].position.y >= game.windowSize.height)
+            {
+                aliens.bombs[i].position.x = NOT_IN_PLAY;
+                aliens.bombs[i].position.y = NOT_IN_PLAY;
+                aliens.bombs[i].animation = 0;
+                aliens.numberOfBombsInPlay--;
+            }
+        }
+    }
+    
+    return false;
+}
+
+bool IsCollision(const Position & projectile, const Position & spitePosition, const Size & spriteSize)
+{
+    return (projectile.x >= spitePosition.x && projectile.x < (spitePosition.x + spriteSize.width) &&
+            projectile.y >= spitePosition.y && projectile.y < (spitePosition.y + spriteSize.height));
 }
