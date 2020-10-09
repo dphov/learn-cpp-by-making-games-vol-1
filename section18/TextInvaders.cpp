@@ -121,7 +121,17 @@ void InitGame(Game &game)
 {
     game.windowSize.width  = CursesUtils::ScreenWidth();
     game.windowSize.height = CursesUtils::ScreenHeight();
-    game.currentState      = GS_INTRO;
+    game.currentState      = GS_GAME_OVER; // for now - TODO: change to GS_INTRO at the end;
+    game.waitTimer         = 0;
+    game.gameTimer         = 0;
+    
+    game.gameOverHPositionCursor = 0; // first letter
+    
+    for(int i = 0; i < MAX_NUMBER_OF_CHARACTERS_IN_NAME; i++)
+    {
+        game.playerName[i] = 'A';
+        game.gameOverVPositionCursor[i] = 0; // be at 'A'
+    }
 }
 
 void InitPlayer(const Game &game, Player &player)
@@ -158,11 +168,48 @@ int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[]
             {
                 MovePlayer(game, player, -PLAYER_MOVEMENT_AMOUNT);
             }
+            else if(game.currentState == GS_GAME_OVER)
+            {
+                game.gameOverHPositionCursor = (game.gameOverHPositionCursor - 1);
+                if(game.gameOverHPositionCursor < 0)
+                {
+                    game.gameOverHPositionCursor = MAX_NUMBER_OF_CHARACTERS_IN_NAME - 1;
+                }
+            }
+            
             break;
         case CursesUtils::AK_RIGHT:
             if(game.currentState == GS_PLAY)
             {
                 MovePlayer(game, player, PLAYER_MOVEMENT_AMOUNT);
+            }
+            else if(game.currentState == GS_GAME_OVER)
+            {
+                game.gameOverHPositionCursor = (game.gameOverHPositionCursor + 1) % MAX_NUMBER_OF_CHARACTERS_IN_NAME;
+            }
+            
+            break;
+        
+        case CursesUtils::AK_UP:
+            if(game.currentState == GS_GAME_OVER)
+            {
+                game.gameOverVPositionCursor[game.gameOverHPositionCursor] = game.gameOverVPositionCursor[game.gameOverHPositionCursor] - 1;
+                
+                if(game.gameOverVPositionCursor[game.gameOverHPositionCursor] < 0)
+                {
+                    game.gameOverVPositionCursor[game.gameOverHPositionCursor] = MAX_ALPHABET_CHARACTERS - 1;
+                }
+                
+                game.playerName[game.gameOverHPositionCursor] = 'A' + game.gameOverVPositionCursor[game.gameOverHPositionCursor];
+                
+            }
+            break;
+        case CursesUtils::AK_DOWN:
+            if(game.currentState == GS_GAME_OVER)
+            {
+                game.gameOverVPositionCursor[game.gameOverHPositionCursor] = (game.gameOverVPositionCursor[game.gameOverHPositionCursor] + 1) % MAX_ALPHABET_CHARACTERS;
+                
+                game.playerName[game.gameOverHPositionCursor] = 'A' + game.gameOverVPositionCursor[game.gameOverHPositionCursor];
             }
             break;
         case ' ':
@@ -918,6 +965,8 @@ bool IsCollision(const Position &projectile, const Position &spitePosition, cons
 
 void ResetGame(Game &game,Player  &player, AlienSwarm &aliens, Shield shields[], int numberOfShields)
 {
+    game.waitTimer  =   0;
+    game.gameTimer  =   0;
     ResetPlayer(game,player);
     ResetShields(game, shields, numberOfShields);
     InitAliens(game, aliens);
@@ -949,12 +998,33 @@ void DrawGameOverScreen(const Game& game)
     string gameOverString = "Game Over!";
     string pressSpaceString = "Press Space Bar to continue";
     
-    const int yPos = game.windowSize.height / 2;
+    string namePromptString = "Please Enter your name:";
+    
+    
+    const int yPos = game.windowSize.height / 3;
+    
     const int gameOverXPos = game.windowSize.width / 2 - gameOverString.length() / 2;
     const int pressSpaceXPos = game.windowSize.width / 2 - pressSpaceString.length() / 2;
+    const int namePromptXPos = game.windowSize.width / 2 - namePromptString.length() / 2;
     
     CursesUtils::DrawString(gameOverXPos, yPos, gameOverString);
     CursesUtils::DrawString(pressSpaceXPos, yPos + 1, pressSpaceString);
+    CursesUtils::DrawString(namePromptXPos, yPos + 3, namePromptString);
+    
+    for(int i = 0; i < MAX_NUMBER_OF_CHARACTERS_IN_NAME; i++)
+    {
+        if(i == game.gameOverHPositionCursor)
+        {
+            attron(A_UNDERLINE);
+        }
+    
+        CursesUtils::DrawCharacter(game.windowSize.width / 2 - MAX_NUMBER_OF_CHARACTERS_IN_NAME / 2 + i, yPos + 5, game.playerName[i]);
+        
+        if (i == game.gameOverHPositionCursor)
+        {
+            attroff(A_UNDERLINE);
+        }
+    }
 }
 
 void DrawIntroScreen(const Game& game)

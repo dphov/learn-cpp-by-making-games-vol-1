@@ -200,6 +200,8 @@ enum
   NUM_LEVELS = 10,
   ALIEN_UFO_SPRITE_WIDTH = 6,
   ALIEN_UFO_SPRITE_HEIGHT = 2,
+  MAX_NUMBER_OF_CHARACTERS_IN_NAME = 3,
+  MAX_ALPHABET_CHARACTERS = 26
 };
 
 enum AlienState
@@ -293,6 +295,10 @@ struct Game
     int level;
     int waitTimer;
     clock_t gameTimer;
+    
+    int gameOverHPositionCursor; //where the horisontal cursor is
+    char playerName[MAX_NUMBER_OF_CHARACTERS_IN_NAME + 1]; // + 1 means plus null character
+    int gameOverVPositionCursor[MAX_NUMBER_OF_CHARACTERS_IN_NAME];
 };
 
 #endif //_TEXTINVADERS_H_
