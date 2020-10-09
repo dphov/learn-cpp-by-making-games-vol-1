@@ -4,6 +4,10 @@ project(learn-cpp-by-making-games-vol1)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+file(MAKE_DIRECTORY ${directory} .)
+
+install(DIRECTORY DESTINATION ${directory})
+
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 

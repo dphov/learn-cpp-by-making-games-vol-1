@@ -173,6 +173,8 @@ const char * ALIEN_EXPLOSION[] = {"\\||/", "/||\\"};
 
 const char * ALIEN_BOMB_SPRITE = "\\|/-";
 
+const char * ALIEN_UFO_SPRITE[] = {"_/oo\\_", "=q==p="};
+
 enum
 {
   SHIELD_SPRITE_HEIGHT = 3,
@@ -195,7 +197,10 @@ enum
   ALIEN_EXPLOSION_TIME = 4,
   ALIEN_BOMB_SPEED = 1,
   WAIT_TIME = 10,
-  NUM_LEVELS = 10
+  NUM_LEVELS = 10,
+  ALIEN_UFO_SPRITE_WIDTH = 6,
+  ALIEN_UFO_SPRITE_HEIGHT = 2,
+  
 };
 
 enum AlienState
@@ -288,6 +293,7 @@ struct Game
     GameState currentState;
     int level;
     int waitTimer;
+    clock_t gameTimer;
 };
 
 #endif //_TEXTINVADERS_H_
