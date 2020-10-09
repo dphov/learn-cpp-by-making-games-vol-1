@@ -5,7 +5,9 @@
 #ifndef _CURSESUTILS_H_
 #define _CURSESUTILS_H_
 
+#include <string>
 #include <ncurses.h>
+
 namespace CursesUtils {
     enum ArrowKeys
     {
@@ -25,5 +27,6 @@ namespace CursesUtils {
     void DrawCharacter(int xPos, int yPos, char aCharacter);
     void MoveCursor(int xPos, int yPos);
     void DrawSprite(int xPos, int yPos, const char * sprite[], int spriteHeight, int offset = 0);
+    void DrawString(int xPos, int yPos, const std::string &string);
 }
 #endif //_CURSESUTILS_H_

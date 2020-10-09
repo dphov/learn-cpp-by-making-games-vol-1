@@ -61,3 +61,8 @@ void CursesUtils::DrawSprite(int xPos, int yPos, const char *sprite[], int sprit
         mvprintw(yPos + h, xPos, "%s", sprite[h+offset]);
     }
 }
+
+void CursesUtils::DrawString(int xPos, int yPos, const std::string &string)
+{
+    mvprintw(yPos, xPos, string.c_str());
+}
