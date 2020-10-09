@@ -19,8 +19,10 @@ void InitPlayer(const Game &game, Player &player);
 void ResetPlayer(const Game &game, Player &player);
 void ResetMissile(Player &player);
 int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[], int numberOfShields);
+
 void UpdateGame(clock_t dt, Game &game, Player &player, Shield shields[], int numberOfShields, AlienSwarm &aliens, AlienUFO &ufo);
 void DrawGame(const Game &game, const Player &player, Shield shields[], int numberOfShields, const AlienSwarm &aliens, const AlienUFO &ufo);
+
 void MovePlayer(const Game &game, Player &player, int dx);
 void PlayerShoot(Player &player);
 void DrawPlayer(const Player &player, const char *sprite[]);
@@ -60,7 +62,6 @@ void ResetUFO(const Game& game, AlienUFO& ufo);
 void PutUFOInPlay(const Game& game, AlienUFO& ufo);
 void UpdateUFO(const Game& game, AlienUFO& ufo);
 void DrawUFO(const AlienUFO& ufo);
-
 
 int main()
 {
@@ -236,7 +237,6 @@ void UpdateGame(clock_t dt, Game &game, Player &player, Shield shields[], int nu
             game.waitTimer = WAIT_TIME;
             ResetGame(game, player, aliens, shields, numberOfShields);
         }
-        
         if(ufo.position.x == NOT_IN_PLAY)
         {
             // put the ufo in play somehow
@@ -259,7 +259,6 @@ void UpdateGame(clock_t dt, Game &game, Player &player, Shield shields[], int nu
                 UpdateUFO(game, ufo);
             }
         }
-        
     }
     else if(game.currentState == GS_PLAYER_DEAD)
     {
@@ -294,6 +293,14 @@ void DrawGame(const Game &game, const Player &player, Shield shields[], int numb
         DrawAliens(aliens);
         
         DrawUFO(ufo);
+    }
+    else if(game.currentState == GS_GAME_OVER)
+    {
+        DrawGameOverScreen(game);
+    }
+    else if (game.currentState == GS_INTRO)
+    {
+        DrawIntroScreen(game);
     }
     else if(game.currentState == GS_GAME_OVER)
     {

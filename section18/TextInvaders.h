@@ -200,7 +200,6 @@ enum
   NUM_LEVELS = 10,
   ALIEN_UFO_SPRITE_WIDTH = 6,
   ALIEN_UFO_SPRITE_HEIGHT = 2,
-  
 };
 
 enum AlienState

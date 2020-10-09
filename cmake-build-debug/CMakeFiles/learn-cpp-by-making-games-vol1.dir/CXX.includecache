@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/CursesUtils.cpp
+CursesUtils.h
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/CursesUtils.h
+ncurses.h
+-
+
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/CursesUtils.h
+string
+-
+ncurses.h
+-
+
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.cpp
+iostream
+-
+ctime
+-
+cstring
+-
+cmath
+-
+cstdlib
+-
+string
+-
+TextInvaders.h
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.h
+CursesUtils.h
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/CursesUtils.h
+
+/Users/dphov/Personal/learn-cpp-by-making-games-vol-1/section18/TextInvaders.h
+string
+-
+vector
+-
+
