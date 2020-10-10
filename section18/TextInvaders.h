@@ -175,6 +175,8 @@ const char * ALIEN_BOMB_SPRITE = "\\|/-";
 
 const char * ALIEN_UFO_SPRITE[] = {"_/oo\\_", "=q==p="};
 
+const char * FILE_NAME = "TextInvadersHighScoresTable.txt";
+
 enum
 {
   SHIELD_SPRITE_HEIGHT = 3,
@@ -201,7 +203,8 @@ enum
   ALIEN_UFO_SPRITE_WIDTH = 6,
   ALIEN_UFO_SPRITE_HEIGHT = 2,
   MAX_NUMBER_OF_CHARACTERS_IN_NAME = 3,
-  MAX_ALPHABET_CHARACTERS = 26
+  MAX_ALPHABET_CHARACTERS = 26,
+  MAX_HIGH_SCORES = 10
 };
 
 enum AlienState
