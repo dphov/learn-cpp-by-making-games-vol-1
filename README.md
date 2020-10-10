@@ -5,7 +5,7 @@ Special thanks to Serge Lansiquot for this awesome game dev C++ course
 
 Course: https://www.udemy.com/course/learn-programming-by-making-games
 
-##Compiling instructions
+### Compiling instructions
 ```
 $ mkdir build 
 $ cd build
