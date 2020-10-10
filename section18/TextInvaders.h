@@ -163,7 +163,7 @@ const char PLAYER_MISSILE_SPRITE = '|';
 
 const char * SHIELD_SPRITE[] = {"/IIIII\\", "IIIIIII", "I/   \\I"};
 
-const char * ALIEN30_SPRITE[] = {"/oo\\", "<  >", "/oo\\", R"(/""\)"};
+const char * ALIEN30_SPRITE[] = {"/oo\\", "<  >", "/oo\\", "(/""\\)"};
 
 const char * ALIEN20_SPRITE[] = {" >< ", "|\\/|", "|><|", "/  \\"};
 
