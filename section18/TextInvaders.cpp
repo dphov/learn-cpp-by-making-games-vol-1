@@ -8,6 +8,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <string>
+#include <algorithm> // for sort
 
 #include "TextInvaders.h"
 #include "CursesUtils.h"
@@ -18,10 +19,10 @@ void InitGame(Game &game);
 void InitPlayer(const Game &game, Player &player);
 void ResetPlayer(const Game &game, Player &player);
 void ResetMissile(Player &player);
-int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[], int numberOfShields);
+int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[], int numberOfShields, HighScoreTable& table);
 
 void UpdateGame(clock_t dt, Game &game, Player &player, Shield shields[], int numberOfShields, AlienSwarm &aliens, AlienUFO &ufo);
-void DrawGame(const Game &game, const Player &player, Shield shields[], int numberOfShields, const AlienSwarm &aliens, const AlienUFO &ufo);
+void DrawGame(const Game &game, const Player &player, Shield shields[], int numberOfShields, const AlienSwarm &aliens, const AlienUFO &ufo, const HighScoreTable& table);
 
 void MovePlayer(const Game &game, Player &player, int dx);
 void PlayerShoot(Player &player);
@@ -63,6 +64,12 @@ void PutUFOInPlay(const Game& game, AlienUFO& ufo);
 void UpdateUFO(const Game& game, AlienUFO& ufo);
 void DrawUFO(const AlienUFO& ufo);
 
+void ResetGameOverPositionCursors(Game& game);
+void AddHighScore(HighScoreTable & table, int score, const string& name);
+
+bool ScoreCompare(const Score& score1, const Score& score2);
+void DrawHighScoreTable(const Game& game, const HighScoreTable& table);
+
 int main()
 {
     srand(time(NULL));
@@ -72,6 +79,7 @@ int main()
     Shield     shields[NUM_SHIELDS];
     AlienSwarm aliens;
     AlienUFO ufo;
+    HighScoreTable table;
     
     CursesUtils::InitializeCurses(true);
     
@@ -89,7 +97,7 @@ int main()
     
     while(!quit)
     {
-        input = HandleInput(game, player, aliens, shields, NUM_SHIELDS);
+        input = HandleInput(game, player, aliens, shields, NUM_SHIELDS, table);
         if(input != 'q')
         {
             clock_t currentTime = clock();
@@ -101,7 +109,7 @@ int main()
                 
                 UpdateGame(dt, game, player, shields, NUM_SHIELDS, aliens, ufo);
                 CursesUtils::ClearScreen();
-                DrawGame(game, player, shields, NUM_SHIELDS, aliens, ufo);
+                DrawGame(game, player, shields, NUM_SHIELDS, aliens, ufo, table);
                 CursesUtils::RefreshScreen();
             }
         }
@@ -125,13 +133,7 @@ void InitGame(Game &game)
     game.waitTimer         = 0;
     game.gameTimer         = 0;
     
-    game.gameOverHPositionCursor = 0; // first letter
-    
-    for(int i = 0; i < MAX_NUMBER_OF_CHARACTERS_IN_NAME; i++)
-    {
-        game.playerName[i] = 'A';
-        game.gameOverVPositionCursor[i] = 0; // be at 'A'
-    }
+    ResetGameOverPositionCursors(game);
 }
 
 void InitPlayer(const Game &game, Player &player)
@@ -157,7 +159,7 @@ void ResetMissile(Player &player)
     player.missile.y = NOT_IN_PLAY;
 }
 
-int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[], int numberOfShields)
+int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[], int numberOfShields, HighScoreTable& table)
 {
     int input = CursesUtils::GetChar();
     switch(input)
@@ -224,6 +226,8 @@ int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[]
                 if(player.lives == 0)
                 {
                     game.currentState = GS_GAME_OVER;
+                    
+                    ResetGameOverPositionCursors(game);
                 }
                 else
                 {
@@ -232,6 +236,12 @@ int HandleInput(Game &game, Player &player, AlienSwarm &aliens, Shield shields[]
                 }
             }
             else if(game.currentState == GS_GAME_OVER)
+            {
+                game.playerName[MAX_NUMBER_OF_CHARACTERS_IN_NAME] = '\0';
+                AddHighScore(table, player.score, std::string(game.playerName));
+                game.currentState = GS_HIGH_SCORES;
+            }
+            else if(game.currentState == GS_HIGH_SCORES)
             {
                 game.currentState = GS_INTRO;
                 ResetGame(game, player, aliens, shields, numberOfShields);
@@ -322,7 +332,7 @@ void UpdateGame(clock_t dt, Game &game, Player &player, Shield shields[], int nu
     }
 }
 
-void DrawGame(const Game &game, const Player &player, Shield shields[], int numberOfShields, const AlienSwarm &aliens, const AlienUFO& ufo)
+void DrawGame(const Game &game, const Player &player, Shield shields[], int numberOfShields, const AlienSwarm &aliens, const AlienUFO &ufo, const HighScoreTable& table)
 {
     if(game.currentState == GS_PLAY || game.currentState == GS_PLAYER_DEAD || game.currentState == GS_WAIT)
     {
@@ -335,7 +345,7 @@ void DrawGame(const Game &game, const Player &player, Shield shields[], int numb
             DrawPlayer(player, PLAYER_EXPLOSION_SPRITE);
         }
         
-        DrawShields(shields, NUM_SHIELDS);
+        DrawShields(shields, numberOfShields);
         
         DrawAliens(aliens);
         
@@ -349,14 +359,11 @@ void DrawGame(const Game &game, const Player &player, Shield shields[], int numb
     {
         DrawIntroScreen(game);
     }
-    else if(game.currentState == GS_GAME_OVER)
+    else if(game.currentState == GS_HIGH_SCORES)
     {
-        DrawGameOverScreen(game);
+        DrawHighScoreTable(game, table);
     }
-    else if (game.currentState == GS_INTRO)
-    {
-        DrawIntroScreen(game);
-    }
+
 }
 
 void MovePlayer(const Game &game, Player &player, int dx)
@@ -1071,5 +1078,50 @@ void DrawUFO(const AlienUFO& ufo)
     if(ufo.position.x != NOT_IN_PLAY)
     {
         CursesUtils::DrawSprite(ufo.position.x, ufo.position.y, ALIEN_UFO_SPRITE, ALIEN_UFO_SPRITE_HEIGHT);
+    }
+}
+
+void ResetGameOverPositionCursors(Game& game)
+{
+    game.gameOverHPositionCursor = 0; // first letter
+    
+    for(int i = 0; i < MAX_NUMBER_OF_CHARACTERS_IN_NAME; i++)
+    {
+        game.playerName[i] = 'A';
+        game.gameOverVPositionCursor[i] = 0; // be at 'A'
+    }
+}
+
+void AddHighScore(HighScoreTable & table, int score, const string& name)
+{
+    Score highScore;
+    highScore.score = score;
+    highScore.name = name;
+    
+    table.scores.push_back(highScore);
+    
+    sort(table.scores.begin(), table.scores.end(), ScoreCompare);
+}
+
+bool ScoreCompare(const Score& score1, const Score& score2)
+{
+    return score1.score > score2.score; // descending order
+}
+
+void DrawHighScoreTable(const Game& game, const HighScoreTable& table)
+{
+    string title = "High Scores";
+    int titleXPos = game.windowSize.width / 2 - title.length() / 2;
+    int yPos = 5;
+    int yPadding = 2;
+    
+    attron(A_UNDERLINE);
+    CursesUtils::DrawString(titleXPos, yPos, title);
+    attroff(A_UNDERLINE);
+    
+    for(int i = 0; i < table.scores.size() && i < 10; i++)
+    {
+        Score score = table.scores[i];
+        mvprintw(yPos + (i + 1) * yPadding, titleXPos - MAX_NUMBER_OF_CHARACTERS_IN_NAME, "%s\t\t%i", score.name.c_str(), score.score);
     }
 }
