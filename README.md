@@ -5,6 +5,17 @@ Special thanks to Serge Lansiquot for this awesome game dev C++ course
 
 Course: https://www.udemy.com/course/learn-programming-by-making-games
 
+### Pre-compiling instructions
+#### Linux (Debian-based)
+```
+apt install cmake ncurses-dev
+```
+
+#### MacOS (using `brew` package manager)
+```
+brew install cmake ncurses
+```
+
 ### Compiling instructions
 ```
 $ mkdir build 
